@@ -1,0 +1,438 @@
+/**
+ * NFO.css - List Component
+ * ASCII-styled lists with custom bullets
+ */
+
+/* ============================================
+   BASE LIST
+   ============================================ */
+
+.nfo-list {
+  font-family: var(--nfo-font-family);
+  list-style: none;
+  padding-left: var(--nfo-space-4);
+}
+
+.nfo-list li {
+  position: relative;
+  padding: var(--nfo-space-1) 0;
+  color: var(--nfo-gray-light);
+}
+
+/* ============================================
+   BULLET STYLES
+   ============================================ */
+
+/* Arrow bullet > */
+.nfo-list-arrow li::before {
+  content: ">";
+  position: absolute;
+  left: calc(-1 * var(--nfo-space-4));
+  color: var(--nfo-cyan);
+}
+
+/* Dash bullet - */
+.nfo-list-dash li::before {
+  content: "-";
+  position: absolute;
+  left: calc(-1 * var(--nfo-space-4));
+  color: var(--nfo-gray);
+}
+
+/* Asterisk bullet * */
+.nfo-list-asterisk li::before {
+  content: "*";
+  position: absolute;
+  left: calc(-1 * var(--nfo-space-4));
+  color: var(--nfo-cyan);
+}
+
+/* Dot bullet • */
+.nfo-list-dot li::before {
+  content: "•";
+  position: absolute;
+  left: calc(-1 * var(--nfo-space-4));
+  color: var(--nfo-cyan);
+}
+
+/* Block bullet █ */
+.nfo-list-block li::before {
+  content: "█";
+  position: absolute;
+  left: calc(-1 * var(--nfo-space-4));
+  color: var(--nfo-cyan);
+  font-size: var(--nfo-font-size-xs);
+}
+
+/* Double arrow >> */
+.nfo-list-double-arrow li::before {
+  content: ">>";
+  position: absolute;
+  left: calc(-1 * var(--nfo-space-6));
+  color: var(--nfo-cyan);
+}
+
+/* Square bracket [+] */
+.nfo-list-bracket li::before {
+  content: "[+]";
+  position: absolute;
+  left: calc(-1 * var(--nfo-space-8));
+  color: var(--nfo-gray);
+}
+
+/* ============================================
+   NUMBERED LIST
+   ============================================ */
+
+.nfo-list-numbered {
+  counter-reset: nfo-counter;
+  padding-left: var(--nfo-space-8);
+}
+
+.nfo-list-numbered li {
+  counter-increment: nfo-counter;
+}
+
+.nfo-list-numbered li::before {
+  content: "[" counter(nfo-counter, decimal-leading-zero) "]";
+  position: absolute;
+  left: calc(-1 * var(--nfo-space-8));
+  color: var(--nfo-gray);
+  font-size: var(--nfo-font-size-xs);
+}
+
+/* Simple numbered */
+.nfo-list-numbered-simple li::before {
+  content: counter(nfo-counter) ".";
+  left: calc(-1 * var(--nfo-space-6));
+}
+
+/* ============================================
+   NESTED LISTS
+   ============================================ */
+
+.nfo-list .nfo-list {
+  margin-top: var(--nfo-space-1);
+  margin-bottom: var(--nfo-space-1);
+}
+
+.nfo-list .nfo-list li::before {
+  content: "-";
+  color: var(--nfo-gray);
+}
+
+.nfo-list .nfo-list .nfo-list li::before {
+  content: "·";
+}
+
+/* ============================================
+   COLOR VARIANTS
+   ============================================ */
+
+.nfo-list-cyan li::before {
+  color: var(--nfo-cyan);
+}
+
+.nfo-list-green li::before {
+  color: var(--nfo-green);
+}
+
+.nfo-list-magenta li::before {
+  color: var(--nfo-magenta);
+}
+
+.nfo-list-yellow li::before {
+  color: var(--nfo-yellow);
+}
+
+.nfo-list-orange li::before {
+  color: var(--nfo-orange);
+}
+
+/* ============================================
+   HORIZONTAL LIST
+   ============================================ */
+
+.nfo-list-horizontal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--nfo-space-4);
+  padding-left: 0;
+}
+
+.nfo-list-horizontal li {
+  padding: 0;
+}
+
+.nfo-list-horizontal li::before {
+  display: none;
+}
+
+.nfo-list-horizontal-separated li:not(:last-child)::after {
+  content: "|";
+  margin-left: var(--nfo-space-4);
+  color: var(--nfo-gray);
+}
+
+/* ============================================
+   DESCRIPTION LIST (key-value)
+   ============================================ */
+
+.nfo-dl {
+  font-family: var(--nfo-font-family);
+}
+
+.nfo-dl dt {
+  color: var(--nfo-gray);
+  text-transform: uppercase;
+  letter-spacing: var(--nfo-letter-spacing-wide);
+  font-size: var(--nfo-font-size-sm);
+  margin-top: var(--nfo-space-3);
+}
+
+.nfo-dl dt::before {
+  content: ":: ";
+  color: var(--nfo-cyan);
+}
+
+.nfo-dl dd {
+  color: var(--nfo-gray-light);
+  padding-left: var(--nfo-space-4);
+  margin-left: 0;
+  margin-top: var(--nfo-space-1);
+}
+
+/* Inline description list */
+.nfo-dl-inline {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--nfo-space-2) var(--nfo-space-4);
+}
+
+.nfo-dl-inline dt {
+  margin-top: 0;
+}
+
+.nfo-dl-inline dt::after {
+  content: ":";
+}
+
+.nfo-dl-inline dt::before {
+  display: none;
+}
+
+.nfo-dl-inline dd {
+  margin-top: 0;
+  padding-left: 0;
+  color: var(--nfo-cyan);
+}
+
+/* ============================================
+   CHECKLIST
+   ============================================ */
+
+/* Static checklist using .checked class on li */
+.nfo-checklist {
+  padding-left: var(--nfo-space-8);
+}
+
+.nfo-checklist li::before {
+  content: "[ ]";
+  position: absolute;
+  left: calc(-1 * var(--nfo-space-8));
+  color: var(--nfo-gray);
+}
+
+.nfo-checklist li.checked::before {
+  content: "[x]";
+  color: var(--nfo-green);
+}
+
+.nfo-checklist li.checked {
+  color: var(--nfo-gray);
+}
+
+/* Interactive checklist using actual checkbox inputs */
+.nfo-checklist-interactive {
+  padding-left: 0;
+  list-style: none;
+}
+
+.nfo-checklist-interactive li {
+  position: relative;
+  padding: var(--nfo-space-1) 0;
+}
+
+.nfo-checklist-interactive li::before {
+  display: none;
+}
+
+.nfo-checklist-interactive label {
+  display: flex;
+  align-items: center;
+  gap: var(--nfo-space-2);
+  cursor: pointer;
+  user-select: none;
+  color: var(--nfo-gray-light);
+  transition: color var(--nfo-transition-fast);
+}
+
+.nfo-checklist-interactive input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.nfo-checklist-interactive .nfo-check-indicator {
+  font-family: var(--nfo-font-family);
+  color: var(--nfo-gray);
+  transition: color var(--nfo-transition-fast);
+}
+
+.nfo-checklist-interactive .nfo-check-indicator::before {
+  content: "[ ]";
+}
+
+.nfo-checklist-interactive input[type="checkbox"]:checked + .nfo-check-indicator::before {
+  content: "[x]";
+  color: var(--nfo-green);
+}
+
+.nfo-checklist-interactive input[type="checkbox"]:checked ~ .nfo-check-text {
+  color: var(--nfo-gray);
+  /*text-decoration: line-through;*/
+}
+
+.nfo-checklist-interactive label:hover .nfo-check-indicator {
+  color: var(--nfo-cyan);
+}
+
+.nfo-checklist-interactive input[type="checkbox"]:focus + .nfo-check-indicator {
+  color: var(--nfo-cyan);
+}
+
+/* Alternative: block style [█] */
+.nfo-checklist-block .nfo-check-indicator::before {
+  content: "[ ]";
+}
+
+.nfo-checklist-block input[type="checkbox"]:checked + .nfo-check-indicator::before {
+  content: "[█]";
+  color: var(--nfo-green);
+}
+
+/* Alternative: star style */
+.nfo-checklist-star .nfo-check-indicator::before {
+  content: "[ ]";
+}
+
+.nfo-checklist-star input[type="checkbox"]:checked + .nfo-check-indicator::before {
+  content: "[*]";
+  color: var(--nfo-yellow);
+}
+
+/* ============================================
+   FILE TREE LIST
+   ============================================ */
+
+.nfo-tree {
+  font-family: var(--nfo-font-family);
+  font-size: var(--nfo-font-size-sm);
+  padding-left: 0;
+  list-style: none;
+  color: var(--nfo-gray-light);
+}
+
+.nfo-tree li {
+  position: relative;
+  padding: var(--nfo-space-1) 0;
+  padding-left: 2.5ch;
+  white-space: nowrap;
+}
+
+.nfo-tree li::before {
+  content: "├─ ";
+  position: absolute;
+  left: 0;
+  color: var(--nfo-gray);
+}
+
+.nfo-tree li:last-child::before {
+  content: "└─ ";
+}
+
+/* Nested trees */
+.nfo-tree .nfo-tree {
+  margin-left: 2ch;
+  padding-left: 0;
+}
+
+
+/* File name styling */
+.nfo-tree-name {
+  color: var(--nfo-cyan);
+}
+
+/* Folder styling */
+.nfo-tree-folder > .nfo-tree-name {
+  color: var(--nfo-yellow);
+}
+
+/* File type indicators (ASCII-style, no emojis) */
+.nfo-tree-file::before {
+  content: "├─ ";
+}
+
+.nfo-tree-file:last-child::before {
+  content: "└─ ";
+}
+
+.nfo-tree-folder::before {
+  content: "├─ ";
+}
+
+.nfo-tree-folder:last-child::before {
+  content: "└─ ";
+}
+
+/* With brackets for folders [dir] */
+.nfo-tree-bracket .nfo-tree-folder > .nfo-tree-name::before {
+  content: "[";
+  color: var(--nfo-gray);
+}
+
+.nfo-tree-bracket .nfo-tree-folder > .nfo-tree-name::after {
+  content: "]";
+  color: var(--nfo-gray);
+}
+
+/* Alternative: Plus/minus for expandable look */
+.nfo-tree-plus .nfo-tree-folder::before {
+  content: "├─ [+] ";
+}
+
+.nfo-tree-plus .nfo-tree-folder:last-child::before {
+  content: "└─ [+] ";
+}
+
+.nfo-tree-plus .nfo-tree-folder.open::before {
+  content: "├─ [-] ";
+}
+
+.nfo-tree-plus .nfo-tree-folder.open:last-child::before {
+  content: "└─ [-] ";
+}
+
+/* Color variants */
+.nfo-tree-cyan .nfo-tree-name {
+  color: var(--nfo-cyan);
+}
+
+.nfo-tree-green .nfo-tree-name {
+  color: var(--nfo-green);
+}
+
+.nfo-tree-green .nfo-tree-folder > .nfo-tree-name {
+  color: var(--nfo-green);
+}

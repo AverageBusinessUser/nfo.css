@@ -1,0 +1,54 @@
+/**
+ * NFO.css - Font Configuration
+ * Monospace font stack optimized for ASCII art
+ */
+
+/* Base font application */
+.nfo,
+.nfo *,
+[class*="nfo-"] {
+  font-family: var(--nfo-font-family);
+}
+
+/* Preformatted text - essential for ASCII art */
+.nfo pre,
+.nfo-pre {
+  font-family: var(--nfo-font-family);
+  white-space: pre;
+  overflow-x: auto;
+  line-height: var(--nfo-line-height-tight);
+  letter-spacing: 0;
+}
+
+/* Ensure consistent character width for ASCII art */
+.nfo-ascii {
+  font-family: var(--nfo-font-family);
+  line-height: var(--nfo-line-height-tight);
+  letter-spacing: 0;
+  white-space: pre;
+  font-variant-ligatures: none;
+  font-feature-settings: "liga" 0, "calt" 0;
+}
+
+/* Code blocks */
+.nfo code,
+.nfo-code {
+  font-family: var(--nfo-font-family);
+  font-size: var(--nfo-font-size-sm);
+  background: var(--nfo-bg-dark);
+  padding: var(--nfo-space-1) var(--nfo-space-2);
+  border-radius: 2px;
+}
+
+/* Keyboard input styling */
+.nfo kbd,
+.nfo-kbd {
+  font-family: var(--nfo-font-family);
+  font-size: var(--nfo-font-size-sm);
+  background: var(--nfo-gray-dark);
+  color: var(--nfo-white);
+  padding: var(--nfo-space-1) var(--nfo-space-2);
+  border: 1px solid var(--nfo-gray);
+  border-radius: 3px;
+  box-shadow: inset 0 -2px 0 var(--nfo-bg-black);
+}

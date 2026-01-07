@@ -1,0 +1,477 @@
+/**
+ * NFO.css - Box Component
+ * ASCII art styled containers with various border styles
+ */
+
+/* ============================================
+   BASE BOX
+   ============================================ */
+
+.nfo-box {
+  position: relative;
+  background: var(--nfo-bg-dark);
+  padding: var(--nfo-space-4);
+  font-family: var(--nfo-font-family);
+}
+
+/* ============================================
+   UNICODE BOX BORDERS (Single Line)
+   Uses: ┌ ┐ └ ┘ │ ─
+   ============================================ */
+
+.nfo-box-single {
+  border: 1px solid var(--nfo-gray);
+}
+
+/* Pseudo-element approach for character borders */
+.nfo-box-unicode {
+  padding: var(--nfo-space-6);
+  background: var(--nfo-bg-dark);
+  position: relative;
+}
+
+.nfo-box-unicode::before {
+  content: "┌" attr(data-title) "┐";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  color: var(--nfo-gray);
+  text-align: center;
+  background: var(--nfo-bg-dark);
+  transform: translateY(-50%);
+}
+
+/* ============================================
+   UNICODE BOX BORDERS (Double Line)
+   Uses: ╔ ╗ ╚ ╝ ║ ═
+   ============================================ */
+
+.nfo-box-double {
+  border: 3px double var(--nfo-gray);
+}
+
+/* ============================================
+   ASCII BOX BORDERS (Pure ASCII)
+   Uses: + - |
+   ============================================ */
+
+/* Simple ASCII border using box-shadow (no extra markup) */
+.nfo-box-ascii {
+  position: relative;
+  padding: var(--nfo-space-4);
+  background: var(--nfo-bg-dark);
+  border: 1px dashed var(--nfo-gray);
+}
+
+/* Full ASCII box with character corners - requires structure */
+.nfo-box-ascii-full {
+  position: relative;
+  background: var(--nfo-bg-dark);
+  font-family: var(--nfo-font-family);
+  line-height: 1;
+  overflow: hidden;
+}
+
+.nfo-box-ascii-top,
+.nfo-box-ascii-bottom {
+  display: flex;
+  align-items: center;
+  color: var(--nfo-gray);
+  font-size: var(--nfo-font-size-sm);
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.nfo-box-ascii-top::before {
+  content: "+";
+}
+
+.nfo-box-ascii-top::after {
+  content: "+";
+}
+
+.nfo-box-ascii-bottom::before {
+  content: "+";
+}
+
+.nfo-box-ascii-bottom::after {
+  content: "+";
+}
+
+.nfo-box-ascii-line {
+  flex: 1;
+  height: 1px;
+  border-top: 1px dashed currentColor;
+}
+
+.nfo-box-ascii-content {
+  padding: var(--nfo-space-3) var(--nfo-space-4);
+  padding-left: calc(var(--nfo-space-4) + 1ch);
+  padding-right: calc(var(--nfo-space-4) + 1ch);
+  position: relative;
+}
+
+.nfo-box-ascii-content::before,
+.nfo-box-ascii-content::after {
+  content: "|";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  color: var(--nfo-gray);
+  font-size: var(--nfo-font-size-sm);
+}
+
+.nfo-box-ascii-content::before {
+  left: 0;
+}
+
+.nfo-box-ascii-content::after {
+  right: 0;
+}
+
+/* Unicode single-line box (┌─┐│└┘) - no extra markup */
+.nfo-box-unicode-single {
+  position: relative;
+  padding: var(--nfo-space-4);
+  padding-top: calc(var(--nfo-space-4) + 1em);
+  padding-bottom: calc(var(--nfo-space-4) + 1em);
+  padding-left: calc(var(--nfo-space-4) + 1ch);
+  padding-right: calc(var(--nfo-space-4) + 1ch);
+  background: var(--nfo-bg-dark);
+  font-family: var(--nfo-font-family);
+}
+
+.nfo-box-unicode-single::before {
+  content: "┌────────────────────────────────────────────────────────────────────────────────┐";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  color: var(--nfo-gray);
+  font-size: var(--nfo-font-size-sm);
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.nfo-box-unicode-single::after {
+  content: "└────────────────────────────────────────────────────────────────────────────────┘";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: var(--nfo-gray);
+  font-size: var(--nfo-font-size-sm);
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* Unicode box with structure for proper corners */
+.nfo-box-unicode-full {
+  position: relative;
+  background: var(--nfo-bg-dark);
+  font-family: var(--nfo-font-family);
+  line-height: 1;
+  overflow: hidden;
+}
+
+.nfo-box-unicode-top,
+.nfo-box-unicode-bottom {
+  display: flex;
+  align-items: center;
+  color: var(--nfo-gray);
+  font-size: var(--nfo-font-size-sm);
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.nfo-box-unicode-top::before {
+  content: "┌";
+}
+
+.nfo-box-unicode-top::after {
+  content: "┐";
+}
+
+.nfo-box-unicode-bottom::before {
+  content: "└";
+}
+
+.nfo-box-unicode-bottom::after {
+  content: "┘";
+}
+
+.nfo-box-unicode-line {
+  flex: 1;
+  border-top: 1px solid currentColor;
+}
+
+.nfo-box-unicode-content {
+  padding: var(--nfo-space-3) var(--nfo-space-4);
+  padding-left: calc(var(--nfo-space-4) + 1ch);
+  padding-right: calc(var(--nfo-space-4) + 1ch);
+  position: relative;
+}
+
+.nfo-box-unicode-content::before,
+.nfo-box-unicode-content::after {
+  content: "│";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  color: var(--nfo-gray);
+  font-size: var(--nfo-font-size-sm);
+}
+
+.nfo-box-unicode-content::before {
+  left: 0;
+}
+
+.nfo-box-unicode-content::after {
+  right: 0;
+}
+
+/* ============================================
+   BLOCK CHARACTER BORDERS
+   Uses: █ ▀ ▄
+   ============================================ */
+
+.nfo-box-block {
+  border: none;
+  position: relative;
+  padding: var(--nfo-space-4);
+  padding-left: calc(var(--nfo-space-4) + 8px);
+  padding-right: calc(var(--nfo-space-4) + 8px);
+  background: var(--nfo-bg-dark);
+  color: var(--nfo-gray);
+}
+
+/* Top border */
+.nfo-box-block::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: currentColor;
+}
+
+/* Bottom border */
+.nfo-box-block::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: currentColor;
+}
+
+/* Container for left/right borders - requires wrapper */
+.nfo-box-block-inner {
+  position: relative;
+}
+
+/* Left border */
+.nfo-box-block-left,
+.nfo-box-block-right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: currentColor;
+}
+
+.nfo-box-block-left {
+  left: 0;
+}
+
+.nfo-box-block-right {
+  right: 0;
+}
+
+/* Alternative: Full block border using box-shadow (no extra markup needed) */
+.nfo-box-block-full {
+  border: none;
+  position: relative;
+  padding: var(--nfo-space-4);
+  background: var(--nfo-bg-dark);
+  box-shadow:
+    inset 4px 0 0 0 currentColor,
+    inset -4px 0 0 0 currentColor,
+    inset 0 4px 0 0 currentColor,
+    inset 0 -4px 0 0 currentColor;
+}
+
+/* Block border with actual block characters */
+.nfo-box-blocks {
+  position: relative;
+  background: var(--nfo-bg-dark);
+  padding: 0;
+  font-family: var(--nfo-font-family);
+  line-height: 1;
+  overflow: hidden;
+}
+
+.nfo-box-blocks-top,
+.nfo-box-blocks-bottom {
+  display: block;
+  color: var(--nfo-gray);
+  height: 0.875em;
+  font-size: var(--nfo-font-size-sm);
+  background: currentColor;
+}
+
+.nfo-box-blocks-content {
+  padding: var(--nfo-space-3) var(--nfo-space-4);
+  padding-left: calc(var(--nfo-space-4) + 0.6em);
+  padding-right: calc(var(--nfo-space-4) + 0.6em);
+  position: relative;
+}
+
+.nfo-box-blocks-content::before,
+.nfo-box-blocks-content::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 0.5em;
+  background: currentColor;
+  color: var(--nfo-gray);
+}
+
+.nfo-box-blocks-content::before {
+  left: 0;
+}
+
+.nfo-box-blocks-content::after {
+  right: 0;
+}
+
+/* ============================================
+   BOX WITH HEADER
+   ============================================ */
+
+.nfo-box-header {
+  background: var(--nfo-bg-dark);
+  overflow: hidden;
+}
+
+.nfo-box-header-title {
+  background: var(--nfo-gray-dark);
+  padding: var(--nfo-space-2) var(--nfo-space-4);
+  border-bottom: 1px solid var(--nfo-gray);
+  text-transform: uppercase;
+  letter-spacing: var(--nfo-letter-spacing-wide);
+  font-size: var(--nfo-font-size-sm);
+}
+
+.nfo-box-header-content {
+  padding: var(--nfo-space-4);
+}
+
+/* ============================================
+   NFO-STYLE FRAMED BOX
+   Classic NFO file frame aesthetic
+   ============================================ */
+
+.nfo-frame {
+  position: relative;
+  background: var(--nfo-bg-black);
+  padding: var(--nfo-space-8);
+  color: var(--nfo-gray-light);
+}
+
+.nfo-frame-border {
+  position: absolute;
+  color: var(--nfo-cyan-dim);
+  font-family: var(--nfo-font-family);
+  line-height: 1;
+  white-space: pre;
+}
+
+.nfo-frame-top {
+  top: var(--nfo-space-2);
+  left: var(--nfo-space-2);
+  right: var(--nfo-space-2);
+}
+
+.nfo-frame-bottom {
+  bottom: var(--nfo-space-2);
+  left: var(--nfo-space-2);
+  right: var(--nfo-space-2);
+}
+
+.nfo-frame-left {
+  top: var(--nfo-space-2);
+  bottom: var(--nfo-space-2);
+  left: var(--nfo-space-2);
+}
+
+.nfo-frame-right {
+  top: var(--nfo-space-2);
+  bottom: var(--nfo-space-2);
+  right: var(--nfo-space-2);
+}
+
+/* ============================================
+   BOX COLOR VARIANTS
+   ============================================ */
+
+.nfo-box-cyan {
+  border-color: var(--nfo-cyan);
+  color: var(--nfo-cyan);
+}
+
+.nfo-box-green {
+  border-color: var(--nfo-green);
+  color: var(--nfo-green);
+}
+
+.nfo-box-magenta {
+  border-color: var(--nfo-magenta);
+  color: var(--nfo-magenta);
+}
+
+.nfo-box-yellow {
+  border-color: var(--nfo-yellow);
+  color: var(--nfo-yellow);
+}
+
+.nfo-box-orange {
+  border-color: var(--nfo-orange);
+  color: var(--nfo-orange);
+}
+
+.nfo-box-red {
+  border-color: var(--nfo-red);
+  color: var(--nfo-red);
+}
+
+/* ============================================
+   BOX SIZES
+   ============================================ */
+
+.nfo-box-sm {
+  padding: var(--nfo-space-2);
+}
+
+.nfo-box-lg {
+  padding: var(--nfo-space-8);
+}
+
+/* ============================================
+   INLINE BOX (for inline elements)
+   ============================================ */
+
+.nfo-box-inline {
+  display: inline-block;
+  padding: var(--nfo-space-1) var(--nfo-space-2);
+  border: 1px solid var(--nfo-gray);
+  background: var(--nfo-bg-dark);
+}

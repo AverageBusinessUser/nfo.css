@@ -1,0 +1,410 @@
+/**
+ * NFO.css - Theme Definitions
+ * Apply theme classes to body or container to change the color scheme
+ *
+ * Usage: <body class="nfo-page nfo-theme-matrix">
+ */
+
+/* ============================================
+   THEME: DEFAULT (Cyan)
+   Classic NFO cyan/magenta look
+   ============================================ */
+
+.nfo-theme-default {
+  --nfo-theme-primary: var(--nfo-cyan);
+  --nfo-theme-primary-dim: var(--nfo-cyan-dim);
+  --nfo-theme-secondary: var(--nfo-magenta);
+  --nfo-theme-secondary-dim: var(--nfo-magenta-dim);
+  --nfo-theme-bg: var(--nfo-bg-black);
+  --nfo-theme-bg-alt: var(--nfo-bg-dark);
+}
+
+/* Default theme box style: single border (from nfo-box-single) */
+.nfo-page.nfo-theme-default .nfo-box,
+.nfo-page.nfo-theme-default .nfo-card {
+  border: 1px solid var(--nfo-theme-border);
+}
+
+/* ============================================
+   THEME: MATRIX (Green)
+   Classic green terminal aesthetic
+   ============================================ */
+
+.nfo-theme-matrix {
+  --nfo-theme-primary: var(--nfo-green);
+  --nfo-theme-primary-dim: var(--nfo-green-dim);
+  --nfo-theme-secondary: var(--nfo-ansi-bright-green);
+  --nfo-theme-secondary-dim: var(--nfo-ansi-green);
+  --nfo-theme-text: var(--nfo-ansi-bright-green);
+  --nfo-theme-text-muted: var(--nfo-ansi-green);
+  --nfo-theme-text-dim: var(--nfo-green-dim);
+  --nfo-theme-border: var(--nfo-green-dim);
+  --nfo-theme-border-accent: var(--nfo-green);
+  --nfo-theme-hover: var(--nfo-green);
+  --nfo-theme-focus: var(--nfo-green);
+  --nfo-theme-glow: var(--nfo-green);
+  --nfo-theme-bg: var(--nfo-bg-black);
+  --nfo-theme-bg-alt: #0a110a;
+}
+
+/* Matrix theme box style: double border */
+.nfo-page.nfo-theme-matrix .nfo-box {
+  border: 3px double var(--nfo-theme-border);
+}
+
+.nfo-page.nfo-theme-matrix .nfo-card {
+  border: 3px double var(--nfo-theme-border);
+}
+
+/* ============================================
+   THEME: VAPOR (Magenta/Cyan)
+   Vaporwave-inspired aesthetic
+   ============================================ */
+
+.nfo-theme-vapor {
+  --nfo-theme-primary: var(--nfo-magenta);
+  --nfo-theme-primary-dim: var(--nfo-magenta-dim);
+  --nfo-theme-secondary: var(--nfo-cyan);
+  --nfo-theme-secondary-dim: var(--nfo-cyan-dim);
+  --nfo-theme-text: var(--nfo-ansi-bright-magenta);
+  --nfo-theme-text-muted: var(--nfo-magenta);
+  --nfo-theme-text-dim: var(--nfo-magenta-dim);
+  --nfo-theme-border: var(--nfo-magenta-dim);
+  --nfo-theme-border-accent: var(--nfo-magenta);
+  --nfo-theme-hover: var(--nfo-cyan);
+  --nfo-theme-focus: var(--nfo-magenta);
+  --nfo-theme-glow: var(--nfo-magenta);
+  --nfo-theme-bg: var(--nfo-bg-navy);
+  --nfo-theme-bg-alt: #120a1a;
+}
+
+/* Vapor theme box style: dashed (ASCII style) */
+.nfo-page.nfo-theme-vapor .nfo-box {
+  border: 1px dashed var(--nfo-theme-border);
+}
+
+.nfo-page.nfo-theme-vapor .nfo-card {
+  border: 1px dashed var(--nfo-theme-border);
+}
+
+/* ============================================
+   THEME: AMBER
+   Classic amber/orange phosphor monitor
+   ============================================ */
+
+.nfo-theme-amber {
+  --nfo-theme-primary: var(--nfo-orange);
+  --nfo-theme-primary-dim: var(--nfo-orange-dim);
+  --nfo-theme-secondary: var(--nfo-yellow);
+  --nfo-theme-secondary-dim: var(--nfo-yellow-dim);
+  --nfo-theme-text: var(--nfo-orange);
+  --nfo-theme-text-muted: #cc8844;
+  --nfo-theme-text-dim: var(--nfo-orange-dim);
+  --nfo-theme-border: var(--nfo-orange-dim);
+  --nfo-theme-border-accent: var(--nfo-orange);
+  --nfo-theme-hover: var(--nfo-yellow);
+  --nfo-theme-focus: var(--nfo-orange);
+  --nfo-theme-glow: var(--nfo-orange);
+  --nfo-theme-bg: #0a0800;
+  --nfo-theme-bg-alt: #110e00;
+}
+
+/* Amber theme box style: single border (from nfo-box-single) */
+.nfo-page.nfo-theme-amber .nfo-box,
+.nfo-page.nfo-theme-amber .nfo-card {
+  border: 1px solid var(--nfo-theme-border);
+}
+
+/* ============================================
+   THEME: ICE (Blue/Cyan)
+   Cool blue tones
+   ============================================ */
+
+.nfo-theme-ice {
+  --nfo-theme-primary: var(--nfo-ansi-bright-cyan);
+  --nfo-theme-primary-dim: var(--nfo-ansi-cyan);
+  --nfo-theme-secondary: var(--nfo-ansi-bright-blue);
+  --nfo-theme-secondary-dim: var(--nfo-ansi-blue);
+  --nfo-theme-text: var(--nfo-ansi-bright-cyan);
+  --nfo-theme-text-muted: var(--nfo-ansi-cyan);
+  --nfo-theme-text-dim: var(--nfo-blue-dim);
+  --nfo-theme-border: var(--nfo-ansi-cyan);
+  --nfo-theme-border-accent: var(--nfo-ansi-bright-cyan);
+  --nfo-theme-hover: var(--nfo-white);
+  --nfo-theme-focus: var(--nfo-ansi-bright-cyan);
+  --nfo-theme-glow: var(--nfo-ansi-bright-cyan);
+  --nfo-theme-bg: var(--nfo-bg-blue);
+  --nfo-theme-bg-alt: #0e1020;
+}
+
+/* Ice theme box style: single border (from nfo-box-single) */
+.nfo-page.nfo-theme-ice .nfo-box,
+.nfo-page.nfo-theme-ice .nfo-card {
+  border: 1px solid var(--nfo-theme-border);
+}
+
+/* ============================================
+   THEME: BLOOD (Red)
+   Dark red hacker aesthetic
+   ============================================ */
+
+.nfo-theme-blood {
+  --nfo-theme-primary: var(--nfo-red);
+  --nfo-theme-primary-dim: var(--nfo-red-dim);
+  --nfo-theme-secondary: var(--nfo-ansi-bright-red);
+  --nfo-theme-secondary-dim: var(--nfo-ansi-red);
+  --nfo-theme-text: var(--nfo-ansi-bright-red);
+  --nfo-theme-text-muted: var(--nfo-ansi-red);
+  --nfo-theme-text-dim: var(--nfo-red-dim);
+  --nfo-theme-border: var(--nfo-red-dim);
+  --nfo-theme-border-accent: var(--nfo-red);
+  --nfo-theme-hover: var(--nfo-white);
+  --nfo-theme-focus: var(--nfo-red);
+  --nfo-theme-glow: var(--nfo-red);
+  --nfo-theme-bg: #0a0000;
+  --nfo-theme-bg-alt: #110000;
+}
+
+/* Blood theme box style: block full (from nfo-box-block-full) */
+.nfo-page.nfo-theme-blood .nfo-box,
+.nfo-page.nfo-theme-blood .nfo-card {
+  
+  box-shadow:
+    inset 4px 0 0 0 var(--nfo-theme-border),
+    inset -4px 0 0 0 var(--nfo-theme-border),
+    inset 0 4px 0 0 var(--nfo-theme-border),
+    inset 0 -4px 0 0 var(--nfo-theme-border);
+}
+
+/* ============================================
+   THEMED COMPONENT VARIANTS
+   Use .nfo-themed class to apply theme colors
+   ============================================ */
+
+/* Themed heading */
+.nfo-themed h1,
+.nfo-themed h2,
+.nfo-themed .nfo-h1,
+.nfo-themed .nfo-h2 {
+  color: var(--nfo-theme-primary);
+}
+
+.nfo-themed h3,
+.nfo-themed h4,
+.nfo-themed .nfo-h3,
+.nfo-themed .nfo-h4 {
+  color: var(--nfo-theme-secondary);
+}
+
+/* Themed box */
+.nfo-box.nfo-themed {
+  border-color: var(--nfo-theme-border);
+  background: var(--nfo-theme-bg-alt);
+}
+
+.nfo-box.nfo-themed-accent {
+  border-color: var(--nfo-theme-primary);
+}
+
+/* Themed button */
+.nfo-btn.nfo-themed {
+  color: var(--nfo-theme-primary);
+  border-color: var(--nfo-theme-primary);
+}
+
+.nfo-btn.nfo-themed:hover {
+  background: var(--nfo-theme-primary);
+  color: var(--nfo-theme-bg);
+}
+
+.nfo-btn.nfo-themed:focus {
+  box-shadow: 0 0 0 2px var(--nfo-theme-focus);
+}
+
+/* Themed card */
+.nfo-card.nfo-themed {
+  border-color: var(--nfo-theme-border);
+  background: var(--nfo-theme-bg-alt);
+}
+
+.nfo-card.nfo-themed .nfo-card-header {
+  border-color: var(--nfo-theme-border);
+  color: var(--nfo-theme-primary);
+  background: var(--nfo-theme-bg-alt)
+}
+
+.nfo-card.nfo-themed-accent {
+  border-color: var(--nfo-theme-primary);
+}
+
+.nfo-card.nfo-themed-accent .nfo-card-header {
+  border-color: var(--nfo-theme-primary);
+}
+
+/* Themed divider */
+.nfo-divider.nfo-themed {
+  border-color: var(--nfo-theme-border-accent);
+  
+}
+
+/* Themed text */
+.nfo-text-primary {
+  color: var(--nfo-theme-primary);
+}
+
+.nfo-text-secondary {
+  color: var(--nfo-theme-secondary);
+}
+
+/* Themed glow */
+.nfo-glow-themed {
+  text-shadow:
+    0 0 5px var(--nfo-theme-glow),
+    0 0 10px var(--nfo-theme-glow);
+}
+
+.nfo-glow-themed-strong {
+  text-shadow:
+    0 0 5px var(--nfo-theme-glow),
+    0 0 10px var(--nfo-theme-glow),
+    0 0 20px var(--nfo-theme-glow),
+    0 0 40px var(--nfo-theme-glow);
+}
+
+/* Themed box glow */
+.nfo-box-glow-themed {
+  box-shadow:
+    0 0 5px var(--nfo-theme-glow),
+    0 0 10px var(--nfo-theme-primary-dim);
+}
+
+/* Themed nav */
+.nfo-nav.nfo-themed .nfo-nav-item {
+  color: var(--nfo-theme-text-muted);
+}
+
+.nfo-nav.nfo-themed .nfo-nav-item:hover {
+  color: var(--nfo-theme-primary);
+}
+
+.nfo-nav.nfo-themed .nfo-nav-item.active {
+  color: var(--nfo-theme-primary);
+}
+
+/* Themed links */
+.nfo-themed a:not(.nfo-btn):not(.nfo-nav-item):not(.nfo-card) {
+  color: var(--nfo-theme-primary);
+}
+
+.nfo-themed a:not(.nfo-btn):not(.nfo-nav-item):not(.nfo-card):hover {
+  color: var(--nfo-theme-hover);
+}
+
+/* Themed input */
+.nfo-input.nfo-themed:focus {
+  border-color: var(--nfo-theme-primary);
+  box-shadow: 0 0 0 1px var(--nfo-theme-primary);
+}
+
+/* Themed list bullets */
+.nfo-list.nfo-themed li::before {
+  color: var(--nfo-theme-primary);
+}
+
+/* Full page theming - applies theme colors to all elements */
+.nfo-page[class*="nfo-theme-"] {
+  background: var(--nfo-theme-bg);
+  color: var(--nfo-theme-text);
+}
+
+.nfo-page[class*="nfo-theme-"] .nfo-box {
+  background: var(--nfo-theme-bg-alt);
+}
+
+.nfo-page[class*="nfo-theme-"] .nfo-card {
+  background: var(--nfo-theme-bg-alt);
+}
+
+.nfo-page[class*="nfo-theme-"] .nfo-card-header {
+  background: var(--nfo-theme-bg-alt);
+  border-color: var(--nfo-theme-border);
+}
+
+.nfo-page[class*="nfo-theme-"] .nfo-btn {
+  color: var(--nfo-theme-text-muted);
+  border-color: var(--nfo-theme-border);
+}
+
+.nfo-page[class*="nfo-theme-"] .nfo-btn:hover {
+  color: var(--nfo-theme-hover);
+  border-color: var(--nfo-theme-hover);
+}
+
+.nfo-page[class*="nfo-theme-"] .nfo-nav-item {
+  color: var(--nfo-theme-text-muted);
+}
+
+.nfo-page[class*="nfo-theme-"] .nfo-nav-item:hover,
+.nfo-page[class*="nfo-theme-"] .nfo-nav-item.active {
+  color: var(--nfo-theme-primary);
+}
+
+.nfo-page[class*="nfo-theme-"] .nfo-divider {
+  border-color: var(--nfo-theme-border-accent);
+}
+
+.nfo-page[class*="nfo-theme-"] h1,
+.nfo-page[class*="nfo-theme-"] h2,
+.nfo-page[class*="nfo-theme-"] .nfo-h1,
+.nfo-page[class*="nfo-theme-"] .nfo-h2 {
+  color: var(--nfo-theme-primary);
+}
+
+.nfo-page[class*="nfo-theme-"] h3,
+.nfo-page[class*="nfo-theme-"] h4,
+.nfo-page[class*="nfo-theme-"] .nfo-h3,
+.nfo-page[class*="nfo-theme-"] .nfo-h4 {
+  color: var(--nfo-theme-secondary);
+}
+
+.nfo-page[class*="nfo-theme-"] .nfo-input {
+  background: var(--nfo-theme-bg);
+  border-color: var(--nfo-theme-border);
+  color: var(--nfo-theme-text);
+}
+
+.nfo-page[class*="nfo-theme-"] .nfo-input:focus {
+  border-color: var(--nfo-theme-primary);
+}
+
+.nfo-page[class*="nfo-theme-"] .nfo-code {
+  background: var(--nfo-theme-bg);
+  border-color: var(--nfo-theme-border);
+}
+
+.nfo-page[class*="nfo-theme-"] .nfo-list li::before {
+  color: var(--nfo-theme-primary);
+}
+
+.nfo-page[class*="nfo-theme-"] .nfo-table {
+  background: var(--nfo-theme-bg-alt);
+}
+
+.nfo-page[class*="nfo-theme-"] .nfo-table td {
+  border-color: var(--nfo-theme-border);
+}
+
+.nfo-page[class*="nfo-theme-"] .nfo-table th {
+  background: var(--nfo-theme-bg-highlight);
+  background-color: var(--nfo-theme-bg-alt);
+  color: var(--nfo-theme-primary);
+}
+
+.nfo-page[class*="nfo-theme-"] .nfo-table td {
+  color: var(--nfo-theme-text-muted);
+}
+
+.nfo-page[class*="nfo-theme-"] .nfo-table-kv td,
+.nfo-page[class*="nfo-theme-"] .nfo-info-table td {
+  color: var(--nfo-theme-primary);
+}

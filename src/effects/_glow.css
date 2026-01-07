@@ -1,0 +1,184 @@
+/**
+ * NFO.css - Glow Effects
+ * Neon glow and text shadow effects
+ */
+
+/* ============================================
+   BASIC GLOW
+   ============================================ */
+
+.nfo-glow {
+  text-shadow:
+    0 0 5px currentColor,
+    0 0 10px currentColor;
+}
+
+.nfo-glow-strong {
+  text-shadow:
+    0 0 5px currentColor,
+    0 0 10px currentColor,
+    0 0 20px currentColor,
+    0 0 40px currentColor;
+}
+
+.nfo-glow-subtle {
+  text-shadow: 0 0 5px currentColor;
+}
+
+/* ============================================
+   COLOR-SPECIFIC GLOWS
+   ============================================ */
+
+.nfo-glow-cyan {
+  text-shadow:
+    0 0 5px var(--nfo-cyan),
+    0 0 10px var(--nfo-cyan),
+    0 0 20px var(--nfo-cyan);
+}
+
+.nfo-glow-cyan-strong {
+  text-shadow:
+    0 0 5px var(--nfo-cyan),
+    0 0 10px var(--nfo-cyan),
+    0 0 20px var(--nfo-cyan),
+    0 0 40px var(--nfo-cyan),
+    0 0 80px var(--nfo-cyan);
+}
+
+.nfo-glow-green {
+  text-shadow:
+    0 0 5px var(--nfo-green),
+    0 0 10px var(--nfo-green),
+    0 0 20px var(--nfo-green);
+}
+
+.nfo-glow-green-strong {
+  text-shadow:
+    0 0 5px var(--nfo-green),
+    0 0 10px var(--nfo-green),
+    0 0 20px var(--nfo-green),
+    0 0 40px var(--nfo-green),
+    0 0 80px var(--nfo-green);
+}
+
+.nfo-glow-magenta {
+  text-shadow:
+    0 0 5px var(--nfo-magenta),
+    0 0 10px var(--nfo-magenta),
+    0 0 20px var(--nfo-magenta);
+}
+
+.nfo-glow-magenta-strong {
+  text-shadow:
+    0 0 5px var(--nfo-magenta),
+    0 0 10px var(--nfo-magenta),
+    0 0 20px var(--nfo-magenta),
+    0 0 40px var(--nfo-magenta),
+    0 0 80px var(--nfo-magenta);
+}
+
+.nfo-glow-yellow {
+  text-shadow:
+    0 0 5px var(--nfo-yellow),
+    0 0 10px var(--nfo-yellow),
+    0 0 20px var(--nfo-yellow);
+}
+
+.nfo-glow-orange {
+  text-shadow:
+    0 0 5px var(--nfo-orange),
+    0 0 10px var(--nfo-orange),
+    0 0 20px var(--nfo-orange);
+}
+
+.nfo-glow-red {
+  text-shadow:
+    0 0 5px var(--nfo-red),
+    0 0 10px var(--nfo-red),
+    0 0 20px var(--nfo-red);
+}
+
+.nfo-glow-white {
+  text-shadow:
+    0 0 5px var(--nfo-white),
+    0 0 10px var(--nfo-white),
+    0 0 20px var(--nfo-white);
+}
+
+/* ============================================
+   BOX GLOWS (for containers)
+   ============================================ */
+
+.nfo-box-glow {
+  box-shadow:
+    0 0 5px currentColor,
+    0 0 10px currentColor;
+}
+
+.nfo-box-glow-cyan {
+  box-shadow:
+    0 0 5px var(--nfo-cyan),
+    0 0 10px var(--nfo-cyan),
+    0 0 20px var(--nfo-cyan);
+}
+
+.nfo-box-glow-green {
+  box-shadow:
+    0 0 5px var(--nfo-green),
+    0 0 10px var(--nfo-green),
+    0 0 20px var(--nfo-green);
+}
+
+.nfo-box-glow-magenta {
+  box-shadow:
+    0 0 5px var(--nfo-magenta),
+    0 0 10px var(--nfo-magenta),
+    0 0 20px var(--nfo-magenta);
+}
+
+/* ============================================
+   BORDER GLOWS
+   ============================================ */
+
+.nfo-border-glow-cyan {
+  border-color: var(--nfo-cyan);
+  box-shadow:
+    0 0 5px var(--nfo-cyan),
+    inset 0 0 5px var(--nfo-cyan-dim);
+}
+
+.nfo-border-glow-green {
+  border-color: var(--nfo-green);
+  box-shadow:
+    0 0 5px var(--nfo-green),
+    inset 0 0 5px var(--nfo-green-dim);
+}
+
+.nfo-border-glow-magenta {
+  border-color: var(--nfo-magenta);
+  box-shadow:
+    0 0 5px var(--nfo-magenta),
+    inset 0 0 5px var(--nfo-magenta-dim);
+}
+
+/* ============================================
+   PULSING GLOW (animated)
+   ============================================ */
+
+@keyframes nfo-pulse-glow {
+  0%, 100% {
+    text-shadow:
+      0 0 5px currentColor,
+      0 0 10px currentColor;
+  }
+  50% {
+    text-shadow:
+      0 0 10px currentColor,
+      0 0 20px currentColor,
+      0 0 30px currentColor;
+  }
+}
+
+.nfo-glow-pulse {
+  animation: nfo-pulse-glow 2s ease-in-out infinite;
+}

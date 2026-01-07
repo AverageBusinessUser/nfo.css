@@ -1,0 +1,280 @@
+/**
+ * NFO.css - Button Component
+ * Retro ASCII-styled buttons
+ */
+
+/* ============================================
+   BASE BUTTON
+   ============================================ */
+
+.nfo-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--nfo-space-2);
+
+  font-family: var(--nfo-font-family);
+  font-size: var(--nfo-font-size-sm);
+  text-transform: uppercase;
+  letter-spacing: var(--nfo-letter-spacing-wide);
+  white-space: nowrap;
+
+  padding: var(--nfo-space-2) var(--nfo-space-4);
+  background: transparent;
+  color: var(--nfo-gray-light);
+  border: 1px solid var(--nfo-gray);
+
+  cursor: pointer;
+  transition:
+    color var(--nfo-transition-fast),
+    border-color var(--nfo-transition-fast),
+    background-color var(--nfo-transition-fast),
+    box-shadow var(--nfo-transition-fast);
+}
+
+.nfo-btn:hover {
+  color: var(--nfo-white);
+  border-color: var(--nfo-white);
+}
+
+.nfo-btn:active {
+  transform: translateY(1px);
+}
+
+.nfo-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--nfo-cyan);
+}
+
+.nfo-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ============================================
+   BRACKETED STYLE [ BUTTON ]
+   ============================================ */
+
+.nfo-btn-bracket {
+  background: transparent;
+  border: none;
+  padding: var(--nfo-space-2) var(--nfo-space-3);
+}
+
+.nfo-btn-bracket::before {
+  content: "[ ";
+  color: var(--nfo-gray);
+}
+
+.nfo-btn-bracket::after {
+  content: " ]";
+  color: var(--nfo-gray);
+}
+
+.nfo-btn-bracket:hover::before,
+.nfo-btn-bracket:hover::after {
+  color: var(--nfo-cyan);
+}
+
+/* ============================================
+   ARROW STYLE < BUTTON >
+   ============================================ */
+
+.nfo-btn-arrow {
+  background: transparent;
+  border: none;
+  padding: var(--nfo-space-2) var(--nfo-space-3);
+}
+
+.nfo-btn-arrow::before {
+  content: "< ";
+  color: var(--nfo-gray);
+}
+
+.nfo-btn-arrow::after {
+  content: " >";
+  color: var(--nfo-gray);
+}
+
+.nfo-btn-arrow:hover::before,
+.nfo-btn-arrow:hover::after {
+  color: var(--nfo-cyan);
+}
+
+/* ============================================
+   BLOCK STYLE █ BUTTON █
+   ============================================ */
+
+.nfo-btn-block {
+  background: var(--nfo-gray-dark);
+  border: none;
+  position: relative;
+}
+
+.nfo-btn-block::before,
+.nfo-btn-block::after {
+  content: "█";
+  color: var(--nfo-gray);
+}
+
+.nfo-btn-block:hover {
+  background: var(--nfo-gray);
+  color: var(--nfo-bg-black);
+}
+
+/* ============================================
+   SOLID STYLE
+   ============================================ */
+
+.nfo-btn-solid {
+  background: var(--nfo-gray-dark);
+  border: 1px solid var(--nfo-gray);
+}
+
+.nfo-btn-solid:hover {
+  background: var(--nfo-gray);
+  color: var(--nfo-bg-black);
+}
+
+/* ============================================
+   COLOR VARIANTS
+   ============================================ */
+
+/* Cyan */
+.nfo-btn-cyan {
+  color: var(--nfo-cyan);
+  border-color: var(--nfo-cyan);
+}
+
+.nfo-btn-cyan:hover {
+  background: var(--nfo-cyan);
+  color: var(--nfo-bg-black);
+}
+
+.nfo-btn-cyan:focus {
+  box-shadow: 0 0 0 2px var(--nfo-cyan);
+}
+
+/* Green */
+.nfo-btn-green {
+  color: var(--nfo-green);
+  border-color: var(--nfo-green);
+}
+
+.nfo-btn-green:hover {
+  background: var(--nfo-green);
+  color: var(--nfo-bg-black);
+}
+
+.nfo-btn-green:focus {
+  box-shadow: 0 0 0 2px var(--nfo-green);
+}
+
+/* Magenta */
+.nfo-btn-magenta {
+  color: var(--nfo-magenta);
+  border-color: var(--nfo-magenta);
+}
+
+.nfo-btn-magenta:hover {
+  background: var(--nfo-magenta);
+  color: var(--nfo-bg-black);
+}
+
+.nfo-btn-magenta:focus {
+  box-shadow: 0 0 0 2px var(--nfo-magenta);
+}
+
+/* Yellow */
+.nfo-btn-yellow {
+  color: var(--nfo-yellow);
+  border-color: var(--nfo-yellow);
+}
+
+.nfo-btn-yellow:hover {
+  background: var(--nfo-yellow);
+  color: var(--nfo-bg-black);
+}
+
+/* Orange */
+.nfo-btn-orange {
+  color: var(--nfo-orange);
+  border-color: var(--nfo-orange);
+}
+
+.nfo-btn-orange:hover {
+  background: var(--nfo-orange);
+  color: var(--nfo-bg-black);
+}
+
+/* Red */
+.nfo-btn-red {
+  color: var(--nfo-red);
+  border-color: var(--nfo-red);
+}
+
+.nfo-btn-red:hover {
+  background: var(--nfo-red);
+  color: var(--nfo-bg-black);
+}
+
+/* ============================================
+   BUTTON SIZES
+   ============================================ */
+
+.nfo-btn-sm {
+  font-size: var(--nfo-font-size-xs);
+  padding: var(--nfo-space-1) var(--nfo-space-2);
+}
+
+.nfo-btn-lg {
+  font-size: var(--nfo-font-size-base);
+  padding: var(--nfo-space-3) var(--nfo-space-6);
+}
+
+/* ============================================
+   BUTTON GROUP
+   ============================================ */
+
+.nfo-btn-group {
+  display: inline-flex;
+}
+
+.nfo-btn-group .nfo-btn {
+  border-radius: 0;
+}
+
+.nfo-btn-group .nfo-btn:not(:last-child) {
+  border-right: none;
+}
+
+/* ============================================
+   GLOW BUTTON
+   ============================================ */
+
+.nfo-btn-glow:hover {
+  box-shadow:
+    0 0 5px currentColor,
+    0 0 10px currentColor;
+}
+
+.nfo-btn-glow-cyan:hover {
+  box-shadow:
+    0 0 5px var(--nfo-cyan),
+    0 0 10px var(--nfo-cyan),
+    0 0 20px var(--nfo-cyan);
+}
+
+.nfo-btn-glow-green:hover {
+  box-shadow:
+    0 0 5px var(--nfo-green),
+    0 0 10px var(--nfo-green),
+    0 0 20px var(--nfo-green);
+}
+
+.nfo-btn-glow-magenta:hover {
+  box-shadow:
+    0 0 5px var(--nfo-magenta),
+    0 0 10px var(--nfo-magenta),
+    0 0 20px var(--nfo-magenta);
+}

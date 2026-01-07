@@ -1,0 +1,348 @@
+/**
+ * NFO.css - Form Component
+ * Retro-styled form inputs
+ */
+
+/* ============================================
+   BASE INPUT
+   ============================================ */
+
+.nfo-input {
+  font-family: var(--nfo-font-family);
+  font-size: var(--nfo-font-size-sm);
+  padding: var(--nfo-space-2) var(--nfo-space-3);
+  background: var(--nfo-bg-dark);
+  color: var(--nfo-gray-light);
+  border: 1px solid var(--nfo-gray);
+  outline: none;
+  transition:
+    border-color var(--nfo-transition-fast),
+    box-shadow var(--nfo-transition-fast);
+}
+
+.nfo-input:focus {
+  border-color: var(--nfo-cyan);
+  color: var(--nfo-white);
+}
+
+.nfo-input::placeholder {
+  color: var(--nfo-gray);
+}
+
+.nfo-input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ============================================
+   INPUT WITH GLOW
+   ============================================ */
+
+.nfo-input-glow:focus {
+  box-shadow: 0 0 5px var(--nfo-cyan), 0 0 10px var(--nfo-cyan-dim);
+}
+
+/* ============================================
+   INPUT SIZES
+   ============================================ */
+
+.nfo-input-sm {
+  font-size: var(--nfo-font-size-xs);
+  padding: var(--nfo-space-1) var(--nfo-space-2);
+}
+
+.nfo-input-lg {
+  font-size: var(--nfo-font-size-base);
+  padding: var(--nfo-space-3) var(--nfo-space-4);
+}
+
+/* ============================================
+   TEXTAREA
+   ============================================ */
+
+.nfo-textarea {
+  font-family: var(--nfo-font-family);
+  font-size: var(--nfo-font-size-sm);
+  padding: var(--nfo-space-3);
+  background: var(--nfo-bg-dark);
+  color: var(--nfo-gray-light);
+  border: 1px solid var(--nfo-gray);
+  outline: none;
+  resize: vertical;
+  min-height: 100px;
+  line-height: var(--nfo-line-height-normal);
+  transition:
+    border-color var(--nfo-transition-fast),
+    box-shadow var(--nfo-transition-fast);
+}
+
+.nfo-textarea:focus {
+  border-color: var(--nfo-cyan);
+  color: var(--nfo-white);
+}
+
+/* ============================================
+   SELECT
+   ============================================ */
+
+.nfo-select {
+  font-family: var(--nfo-font-family);
+  font-size: var(--nfo-font-size-sm);
+  padding: var(--nfo-space-2) var(--nfo-space-6) var(--nfo-space-2) var(--nfo-space-3);
+  background: var(--nfo-bg-dark);
+  color: var(--nfo-gray-light);
+  border: 1px solid var(--nfo-gray);
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23888888' d='M6 8L2 4h8z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--nfo-space-2) center;
+  transition:
+    border-color var(--nfo-transition-fast),
+    box-shadow var(--nfo-transition-fast);
+}
+
+.nfo-select:focus {
+  border-color: var(--nfo-cyan);
+}
+
+.nfo-select:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ============================================
+   CHECKBOX (ASCII style)
+   ============================================ */
+
+.nfo-checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--nfo-space-2);
+  cursor: pointer;
+  font-family: var(--nfo-font-family);
+  font-size: var(--nfo-font-size-sm);
+  color: var(--nfo-gray-light);
+  user-select: none;
+}
+
+.nfo-checkbox input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.nfo-checkbox-indicator {
+  display: inline-block;
+  color: var(--nfo-gray);
+  transition: color var(--nfo-transition-fast);
+}
+
+.nfo-checkbox-indicator::before {
+  content: "[ ]";
+}
+
+.nfo-checkbox input:checked + .nfo-checkbox-indicator::before {
+  content: "[x]";
+  color: var(--nfo-cyan);
+}
+
+.nfo-checkbox input:focus + .nfo-checkbox-indicator {
+  color: var(--nfo-cyan);
+}
+
+.nfo-checkbox:hover .nfo-checkbox-indicator {
+  color: var(--nfo-white);
+}
+
+/* Block style checkbox */
+.nfo-checkbox-block .nfo-checkbox-indicator::before {
+  content: "[ ]";
+}
+
+.nfo-checkbox-block input:checked + .nfo-checkbox-indicator::before {
+  content: "[█]";
+}
+
+/* ============================================
+   RADIO (ASCII style)
+   ============================================ */
+
+.nfo-radio {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--nfo-space-2);
+  cursor: pointer;
+  font-family: var(--nfo-font-family);
+  font-size: var(--nfo-font-size-sm);
+  color: var(--nfo-gray-light);
+  user-select: none;
+}
+
+.nfo-radio input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.nfo-radio-indicator {
+  display: inline-block;
+  color: var(--nfo-gray);
+  transition: color var(--nfo-transition-fast);
+}
+
+.nfo-radio-indicator::before {
+  content: "( )";
+}
+
+.nfo-radio input:checked + .nfo-radio-indicator::before {
+  content: "(•)";
+  color: var(--nfo-cyan);
+}
+
+.nfo-radio input:focus + .nfo-radio-indicator {
+  color: var(--nfo-cyan);
+}
+
+.nfo-radio:hover .nfo-radio-indicator {
+  color: var(--nfo-white);
+}
+
+/* ============================================
+   FORM GROUP
+   ============================================ */
+
+.nfo-form-group {
+  margin-bottom: var(--nfo-space-4);
+}
+
+.nfo-label {
+  display: block;
+  font-family: var(--nfo-font-family);
+  font-size: var(--nfo-font-size-sm);
+  color: var(--nfo-gray);
+  text-transform: uppercase;
+  letter-spacing: var(--nfo-letter-spacing-wide);
+  margin-bottom: var(--nfo-space-2);
+}
+
+.nfo-label-required::after {
+  content: " *";
+  color: var(--nfo-red);
+}
+
+/* ============================================
+   INPUT GROUP (prefix/suffix)
+   ============================================ */
+
+.nfo-input-group {
+  display: flex;
+}
+
+.nfo-input-group .nfo-input {
+  flex: 1;
+  border-radius: 0;
+}
+
+.nfo-input-prefix,
+.nfo-input-suffix {
+  font-family: var(--nfo-font-family);
+  font-size: var(--nfo-font-size-sm);
+  padding: var(--nfo-space-2) var(--nfo-space-3);
+  background: var(--nfo-gray-dark);
+  color: var(--nfo-gray);
+  border: 1px solid var(--nfo-gray);
+  display: flex;
+  align-items: center;
+}
+
+.nfo-input-prefix {
+  border-right: none;
+}
+
+.nfo-input-suffix {
+  border-left: none;
+}
+
+/* ============================================
+   HELP TEXT
+   ============================================ */
+
+.nfo-help {
+  font-family: var(--nfo-font-family);
+  font-size: var(--nfo-font-size-xs);
+  color: var(--nfo-gray);
+  margin-top: var(--nfo-space-1);
+}
+
+/* ============================================
+   VALIDATION STATES
+   ============================================ */
+
+.nfo-input-error,
+.nfo-textarea-error,
+.nfo-select-error {
+  border-color: var(--nfo-red);
+}
+
+.nfo-input-error:focus,
+.nfo-textarea-error:focus,
+.nfo-select-error:focus {
+  border-color: var(--nfo-red);
+  box-shadow: 0 0 5px var(--nfo-red);
+}
+
+.nfo-input-success,
+.nfo-textarea-success,
+.nfo-select-success {
+  border-color: var(--nfo-green);
+}
+
+.nfo-error-message {
+  font-family: var(--nfo-font-family);
+  font-size: var(--nfo-font-size-xs);
+  color: var(--nfo-red);
+  margin-top: var(--nfo-space-1);
+}
+
+.nfo-error-message::before {
+  content: "! ";
+}
+
+/* ============================================
+   FIELDSET
+   ============================================ */
+
+.nfo-fieldset {
+  border: 1px solid var(--nfo-gray);
+  padding: var(--nfo-space-4);
+  margin-bottom: var(--nfo-space-4);
+}
+
+.nfo-legend {
+  font-family: var(--nfo-font-family);
+  font-size: var(--nfo-font-size-sm);
+  color: var(--nfo-gray-light);
+  text-transform: uppercase;
+  letter-spacing: var(--nfo-letter-spacing-wide);
+  padding: 0 var(--nfo-space-2);
+}
+
+/* ============================================
+   COLOR VARIANTS
+   ============================================ */
+
+.nfo-input-cyan:focus {
+  border-color: var(--nfo-cyan);
+}
+
+.nfo-input-green:focus {
+  border-color: var(--nfo-green);
+}
+
+.nfo-input-magenta:focus {
+  border-color: var(--nfo-magenta);
+}

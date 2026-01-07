@@ -1,0 +1,194 @@
+/**
+ * NFO.css - Grid System
+ * Simple CSS grid utilities
+ */
+
+/* ============================================
+   BASIC GRID
+   ============================================ */
+
+.nfo-grid {
+  display: grid;
+  gap: var(--nfo-space-4);
+}
+
+/* ============================================
+   COLUMN TEMPLATES
+   ============================================ */
+
+.nfo-grid-cols-1 { grid-template-columns: repeat(1, 1fr); }
+.nfo-grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+.nfo-grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+.nfo-grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
+.nfo-grid-cols-5 { grid-template-columns: repeat(5, 1fr); }
+.nfo-grid-cols-6 { grid-template-columns: repeat(6, 1fr); }
+
+/* Auto-fit columns */
+.nfo-grid-cols-auto {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.nfo-grid-cols-auto-sm {
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.nfo-grid-cols-auto-lg {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+/* ============================================
+   ROW TEMPLATES
+   ============================================ */
+
+.nfo-grid-rows-1 { grid-template-rows: repeat(1, 1fr); }
+.nfo-grid-rows-2 { grid-template-rows: repeat(2, 1fr); }
+.nfo-grid-rows-3 { grid-template-rows: repeat(3, 1fr); }
+.nfo-grid-rows-4 { grid-template-rows: repeat(4, 1fr); }
+
+/* ============================================
+   GAP
+   ============================================ */
+
+.nfo-grid-gap-0 { gap: 0; }
+.nfo-grid-gap-1 { gap: var(--nfo-space-1); }
+.nfo-grid-gap-2 { gap: var(--nfo-space-2); }
+.nfo-grid-gap-3 { gap: var(--nfo-space-3); }
+.nfo-grid-gap-4 { gap: var(--nfo-space-4); }
+.nfo-grid-gap-6 { gap: var(--nfo-space-6); }
+.nfo-grid-gap-8 { gap: var(--nfo-space-8); }
+
+/* ============================================
+   COLUMN SPAN
+   ============================================ */
+
+.nfo-col-span-1 { grid-column: span 1; }
+.nfo-col-span-2 { grid-column: span 2; }
+.nfo-col-span-3 { grid-column: span 3; }
+.nfo-col-span-4 { grid-column: span 4; }
+.nfo-col-span-5 { grid-column: span 5; }
+.nfo-col-span-6 { grid-column: span 6; }
+.nfo-col-span-full { grid-column: 1 / -1; }
+
+/* ============================================
+   ROW SPAN
+   ============================================ */
+
+.nfo-row-span-1 { grid-row: span 1; }
+.nfo-row-span-2 { grid-row: span 2; }
+.nfo-row-span-3 { grid-row: span 3; }
+.nfo-row-span-4 { grid-row: span 4; }
+.nfo-row-span-full { grid-row: 1 / -1; }
+
+/* ============================================
+   PLACE ITEMS
+   ============================================ */
+
+.nfo-place-items-start { place-items: start; }
+.nfo-place-items-end { place-items: end; }
+.nfo-place-items-center { place-items: center; }
+.nfo-place-items-stretch { place-items: stretch; }
+
+/* ============================================
+   PLACE CONTENT
+   ============================================ */
+
+.nfo-place-content-start { place-content: start; }
+.nfo-place-content-end { place-content: end; }
+.nfo-place-content-center { place-content: center; }
+.nfo-place-content-between { place-content: space-between; }
+.nfo-place-content-around { place-content: space-around; }
+
+/* ============================================
+   RESPONSIVE GRID (Mobile First)
+   ============================================ */
+
+/* Small screens (>= 640px) */
+@media (min-width: 640px) {
+  .nfo-sm-grid-cols-1 { grid-template-columns: repeat(1, 1fr); }
+  .nfo-sm-grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+  .nfo-sm-grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+  .nfo-sm-grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* Medium screens (>= 768px) */
+@media (min-width: 768px) {
+  .nfo-md-grid-cols-1 { grid-template-columns: repeat(1, 1fr); }
+  .nfo-md-grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+  .nfo-md-grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+  .nfo-md-grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
+  .nfo-md-grid-cols-5 { grid-template-columns: repeat(5, 1fr); }
+  .nfo-md-grid-cols-6 { grid-template-columns: repeat(6, 1fr); }
+}
+
+/* Large screens (>= 1024px) */
+@media (min-width: 1024px) {
+  .nfo-lg-grid-cols-1 { grid-template-columns: repeat(1, 1fr); }
+  .nfo-lg-grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+  .nfo-lg-grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+  .nfo-lg-grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
+  .nfo-lg-grid-cols-5 { grid-template-columns: repeat(5, 1fr); }
+  .nfo-lg-grid-cols-6 { grid-template-columns: repeat(6, 1fr); }
+}
+
+/* ============================================
+   COMMON LAYOUTS
+   ============================================ */
+
+/* Sidebar + Main content */
+.nfo-layout-sidebar {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: var(--nfo-space-4);
+}
+
+@media (max-width: 768px) {
+  .nfo-layout-sidebar {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Holy grail layout */
+.nfo-layout-holy-grail {
+  display: grid;
+  grid-template-columns: 200px 1fr 200px;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  gap: var(--nfo-space-4);
+}
+
+.nfo-layout-holy-grail-header {
+  grid-column: 1 / -1;
+}
+
+.nfo-layout-holy-grail-footer {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 768px) {
+  .nfo-layout-holy-grail {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Masonry-like (CSS columns) */
+.nfo-masonry {
+  column-count: 3;
+  column-gap: var(--nfo-space-4);
+}
+
+.nfo-masonry > * {
+  break-inside: avoid;
+  margin-bottom: var(--nfo-space-4);
+}
+
+@media (max-width: 1024px) {
+  .nfo-masonry {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 640px) {
+  .nfo-masonry {
+    column-count: 1;
+  }
+}

@@ -1,0 +1,175 @@
+/**
+ * NFO.css - Typography Utilities
+ * Text sizing, alignment, and styling
+ */
+
+/* ============================================
+   FONT SIZES
+   ============================================ */
+
+.nfo-text-xs { font-size: var(--nfo-font-size-xs); }
+.nfo-text-sm { font-size: var(--nfo-font-size-sm); }
+.nfo-text-base { font-size: var(--nfo-font-size-base); }
+.nfo-text-lg { font-size: var(--nfo-font-size-lg); }
+.nfo-text-xl { font-size: var(--nfo-font-size-xl); }
+.nfo-text-2xl { font-size: var(--nfo-font-size-2xl); }
+.nfo-text-3xl { font-size: var(--nfo-font-size-3xl); }
+
+/* ============================================
+   TEXT ALIGNMENT
+   ============================================ */
+
+.nfo-left { text-align: left; }
+.nfo-center { text-align: center; }
+.nfo-right { text-align: right; }
+
+/* ============================================
+   LINE HEIGHT
+   ============================================ */
+
+.nfo-leading-tight { line-height: var(--nfo-line-height-tight); }
+.nfo-leading-snug { line-height: var(--nfo-line-height-snug); }
+.nfo-leading-normal { line-height: var(--nfo-line-height-normal); }
+.nfo-leading-relaxed { line-height: var(--nfo-line-height-relaxed); }
+
+/* ============================================
+   LETTER SPACING
+   ============================================ */
+
+.nfo-tracking-tight { letter-spacing: var(--nfo-letter-spacing-tight); }
+.nfo-tracking-normal { letter-spacing: var(--nfo-letter-spacing-normal); }
+.nfo-tracking-wide { letter-spacing: var(--nfo-letter-spacing-wide); }
+.nfo-tracking-wider { letter-spacing: var(--nfo-letter-spacing-wider); }
+
+/* ============================================
+   FONT WEIGHT
+   ============================================ */
+
+.nfo-normal { font-weight: 400; }
+.nfo-bold { font-weight: 700; }
+
+/* ============================================
+   TEXT TRANSFORM
+   ============================================ */
+
+.nfo-uppercase { text-transform: uppercase; }
+.nfo-lowercase { text-transform: lowercase; }
+.nfo-capitalize { text-transform: capitalize; }
+
+/* ============================================
+   TEXT DECORATION
+   ============================================ */
+
+.nfo-underline { text-decoration: underline; }
+.nfo-line-through { text-decoration: line-through; }
+.nfo-no-underline { text-decoration: none; }
+
+/* ============================================
+   TEXT SHADOW (basic)
+   ============================================ */
+
+.nfo-shadow-text {
+  text-shadow: var(--nfo-shadow-text);
+}
+
+.nfo-shadow-none {
+  text-shadow: none;
+}
+
+/* ============================================
+   WHITESPACE
+   ============================================ */
+
+.nfo-whitespace-normal { white-space: normal; }
+.nfo-whitespace-nowrap { white-space: nowrap; }
+.nfo-whitespace-pre { white-space: pre; }
+.nfo-whitespace-pre-line { white-space: pre-line; }
+.nfo-whitespace-pre-wrap { white-space: pre-wrap; }
+
+/* ============================================
+   OVERFLOW
+   ============================================ */
+
+.nfo-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.nfo-break-words {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* ============================================
+   HEADINGS
+   ============================================ */
+
+.nfo h1,
+.nfo-h1 {
+  font-size: var(--nfo-font-size-3xl);
+  font-weight: 700;
+  line-height: var(--nfo-line-height-tight);
+  margin-bottom: var(--nfo-space-4);
+}
+
+.nfo h2,
+.nfo-h2 {
+  font-size: var(--nfo-font-size-2xl);
+  font-weight: 700;
+  line-height: var(--nfo-line-height-tight);
+  margin-bottom: var(--nfo-space-3);
+}
+
+.nfo h3,
+.nfo-h3 {
+  font-size: var(--nfo-font-size-xl);
+  font-weight: 700;
+  line-height: var(--nfo-line-height-snug);
+  margin-bottom: var(--nfo-space-2);
+}
+
+.nfo h4,
+.nfo-h4 {
+  font-size: var(--nfo-font-size-lg);
+  font-weight: 700;
+  line-height: var(--nfo-line-height-snug);
+  margin-bottom: var(--nfo-space-2);
+}
+
+/* ============================================
+   PARAGRAPHS
+   ============================================ */
+
+.nfo p,
+.nfo-p {
+  margin-bottom: var(--nfo-space-4);
+  line-height: var(--nfo-line-height-normal);
+}
+
+/* ============================================
+   LINKS
+   ============================================ */
+
+.nfo a,
+.nfo-link {
+  color: var(--nfo-cyan);
+  text-decoration: none;
+  transition: color var(--nfo-transition-fast);
+}
+
+.nfo a:hover,
+.nfo-link:hover {
+  color: var(--nfo-white);
+  text-decoration: underline;
+}
+
+/* ============================================
+   SELECTION
+   ============================================ */
+
+.nfo ::selection,
+[class*="nfo-"] ::selection {
+  background-color: var(--nfo-cyan);
+  color: var(--nfo-bg-black);
+}

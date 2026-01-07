@@ -1,0 +1,193 @@
+/**
+ * NFO.css - CSS Variables
+ * Core design tokens for the NFO aesthetic
+ */
+
+:root {
+  /* ============================================
+     16-COLOR ANSI PALETTE
+     Standard terminal colors (0-15)
+     ============================================ */
+
+  /* Normal colors (0-7) */
+  --nfo-ansi-black: #0c0c0c;
+  --nfo-ansi-red: #c50f1f;
+  --nfo-ansi-green: #13a10e;
+  --nfo-ansi-yellow: #c19c00;
+  --nfo-ansi-blue: #0037da;
+  --nfo-ansi-magenta: #881798;
+  --nfo-ansi-cyan: #3a96dd;
+  --nfo-ansi-white: #cccccc;
+
+  /* Bright colors (8-15) */
+  --nfo-ansi-bright-black: #767676;
+  --nfo-ansi-bright-red: #e74856;
+  --nfo-ansi-bright-green: #16c60c;
+  --nfo-ansi-bright-yellow: #f9f1a5;
+  --nfo-ansi-bright-blue: #3b78ff;
+  --nfo-ansi-bright-magenta: #b4009e;
+  --nfo-ansi-bright-cyan: #61d6d6;
+  --nfo-ansi-bright-white: #f2f2f2;
+
+  /* ============================================
+     COLORS - Classic NFO/Demoscene Palette
+     ============================================ */
+
+  /* Backgrounds */
+  --nfo-bg-black: #0a0a0a;
+  --nfo-bg-dark: #111111;
+  --nfo-bg-blue: #0c0c1e;
+  --nfo-bg-navy: #0a0a1a;
+
+  /* Primary Colors */
+  --nfo-cyan: #00ffff;
+  --nfo-green: #00ff00;
+  --nfo-magenta: #ff00ff;
+  --nfo-yellow: #ffff00;
+  --nfo-orange: #ff6600;
+  --nfo-red: #ff0000;
+  --nfo-blue: #0066ff;
+  --nfo-white: #ffffff;
+
+  /* Muted/Secondary */
+  --nfo-gray-dark: #333333;
+  --nfo-gray: #666666;
+  --nfo-gray-light: #888888;
+  --nfo-gray-lighter: #aaaaaa;
+
+  /* Dimmed versions for borders/accents */
+  --nfo-cyan-dim: #007777;
+  --nfo-green-dim: #007700;
+  --nfo-magenta-dim: #770077;
+  --nfo-yellow-dim: #777700;
+  --nfo-orange-dim: #774400;
+  --nfo-red-dim: #770000;
+  --nfo-blue-dim: #003377;
+
+  /* ============================================
+     SEMANTIC THEME COLORS
+     These are the colors used by themed components.
+     Override these in theme classes to change the look.
+     ============================================ */
+
+  /* Primary: main accent color for headings, links, focus states */
+  --nfo-theme-primary: var(--nfo-cyan);
+  --nfo-theme-primary-dim: var(--nfo-cyan-dim);
+
+  /* Secondary: supporting accent for contrast */
+  --nfo-theme-secondary: var(--nfo-magenta);
+  --nfo-theme-secondary-dim: var(--nfo-magenta-dim);
+
+  /* Text colors */
+  --nfo-theme-text: var(--nfo-gray-lighter);
+  --nfo-theme-text-muted: var(--nfo-gray-light);
+  --nfo-theme-text-dim: var(--nfo-gray);
+
+  /* Backgrounds */
+  --nfo-theme-bg: var(--nfo-bg-black);
+  --nfo-theme-bg-alt: var(--nfo-bg-dark);
+  --nfo-theme-bg-highlight: var(--nfo-gray-dark);
+
+  /* Borders */
+  --nfo-theme-border: var(--nfo-gray);
+  --nfo-theme-border-accent: var(--nfo-theme-primary-dim);
+
+  /* Interactive states */
+  --nfo-theme-hover: var(--nfo-white);
+  --nfo-theme-focus: var(--nfo-theme-primary);
+
+  /* Glow color for effects */
+  --nfo-theme-glow: var(--nfo-theme-primary);
+
+  /* ============================================
+     TYPOGRAPHY
+     ============================================ */
+
+  --nfo-font-family: "IBM Plex Mono", "Cascadia Code", "Fira Code", "SF Mono", "Consolas", "Liberation Mono", "Menlo", monospace;
+
+  /* Font sizes */
+  --nfo-font-size-xs: 0.75rem;
+  --nfo-font-size-sm: 0.875rem;
+  --nfo-font-size-base: 1rem;
+  --nfo-font-size-lg: 1.125rem;
+  --nfo-font-size-xl: 1.25rem;
+  --nfo-font-size-2xl: 1.5rem;
+  --nfo-font-size-3xl: 2rem;
+
+  /* Line heights - optimized for ASCII art alignment */
+  --nfo-line-height-tight: 1;
+  --nfo-line-height-snug: 1.2;
+  --nfo-line-height-normal: 1.5;
+  --nfo-line-height-relaxed: 1.75;
+
+  /* Letter spacing */
+  --nfo-letter-spacing-tight: -0.025em;
+  --nfo-letter-spacing-normal: 0;
+  --nfo-letter-spacing-wide: 0.05em;
+  --nfo-letter-spacing-wider: 0.1em;
+
+  /* ============================================
+     SPACING
+     ============================================ */
+
+  --nfo-space-1: 0.25rem;
+  --nfo-space-2: 0.5rem;
+  --nfo-space-3: 0.75rem;
+  --nfo-space-4: 1rem;
+  --nfo-space-5: 1.25rem;
+  --nfo-space-6: 1.5rem;
+  --nfo-space-8: 2rem;
+  --nfo-space-10: 2.5rem;
+  --nfo-space-12: 3rem;
+  --nfo-space-16: 4rem;
+
+  /* ============================================
+     EFFECTS
+     ============================================ */
+
+  /* Glow intensities */
+  --nfo-glow-sm: 0 0 5px;
+  --nfo-glow-md: 0 0 10px;
+  --nfo-glow-lg: 0 0 20px;
+  --nfo-glow-xl: 0 0 30px;
+
+  /* Shadows */
+  --nfo-shadow-text: 2px 2px 0 var(--nfo-bg-black);
+  --nfo-shadow-box: 4px 4px 0 var(--nfo-bg-black);
+
+  /* ============================================
+     BORDERS
+     ============================================ */
+
+  --nfo-border-width: 1px;
+  --nfo-border-color: var(--nfo-gray);
+
+  /* ============================================
+     ANIMATION
+     ============================================ */
+
+  --nfo-transition-fast: 150ms ease;
+  --nfo-transition-normal: 300ms ease;
+  --nfo-transition-slow: 500ms ease;
+
+  --nfo-blink-speed: 1s;
+  --nfo-flicker-speed: 0.1s;
+
+  /* ============================================
+     LAYOUT
+     ============================================ */
+
+  --nfo-container-sm: 640px;
+  --nfo-container-md: 768px;
+  --nfo-container-lg: 1024px;
+  --nfo-container-xl: 1280px;
+
+  /* ============================================
+     BOX DRAWING CHARACTERS (for reference)
+     ============================================ */
+
+  /* Unicode: ┌ ┐ └ ┘ │ ─ ├ ┤ ┬ ┴ ┼ */
+  /* Double:  ╔ ╗ ╚ ╝ ║ ═ ╠ ╣ ╦ ╩ ╬ */
+  /* Heavy:   ┏ ┓ ┗ ┛ ┃ ━ ┣ ┫ ┳ ┻ ╋ */
+  /* Blocks:  █ ▀ ▄ ▌ ▐ ░ ▒ ▓ */
+}

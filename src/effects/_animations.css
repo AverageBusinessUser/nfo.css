@@ -1,0 +1,298 @@
+/**
+ * NFO.css - Animations
+ * Retro CRT and terminal effects
+ */
+
+/* ============================================
+   CURSOR BLINK
+   ============================================ */
+
+@keyframes nfo-blink {
+  0%, 49% {
+    opacity: 1;
+  }
+  50%, 100% {
+    opacity: 0;
+  }
+}
+
+.nfo-blink {
+  animation: nfo-blink var(--nfo-blink-speed) step-end infinite;
+}
+
+.nfo-cursor::after {
+  content: "█";
+  animation: nfo-blink var(--nfo-blink-speed) step-end infinite;
+}
+
+.nfo-cursor-underscore::after {
+  content: "_";
+  animation: nfo-blink var(--nfo-blink-speed) step-end infinite;
+}
+
+.nfo-cursor-pipe::after {
+  content: "|";
+  animation: nfo-blink var(--nfo-blink-speed) step-end infinite;
+}
+
+/* ============================================
+   SCANLINE EFFECT
+   ============================================ */
+
+.nfo-scanlines {
+  position: relative;
+}
+
+.nfo-scanlines::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0.15) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Heavier scanlines */
+.nfo-scanlines-heavy::before {
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.3) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+}
+
+/* Moving scanline */
+@keyframes nfo-scanline-move {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.nfo-scanline-moving {
+  position: relative;
+  overflow: hidden;
+}
+
+.nfo-scanline-moving::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  animation: nfo-scanline-move 8s linear infinite;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* ============================================
+   CRT FLICKER
+   ============================================ */
+
+@keyframes nfo-flicker {
+  0%, 100% {
+    opacity: 1;
+  }
+  92% {
+    opacity: 1;
+  }
+  93% {
+    opacity: 0.8;
+  }
+  94% {
+    opacity: 1;
+  }
+  97% {
+    opacity: 0.9;
+  }
+  98% {
+    opacity: 1;
+  }
+}
+
+.nfo-flicker {
+  animation: nfo-flicker 0.15s infinite;
+}
+
+/* Subtle flicker - less intense */
+@keyframes nfo-flicker-subtle {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.98;
+  }
+}
+
+.nfo-flicker-subtle {
+  animation: nfo-flicker-subtle 4s infinite;
+}
+
+/* ============================================
+   TYPING EFFECT (CSS only, limited)
+   ============================================ */
+
+@keyframes nfo-typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.nfo-typing {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid currentColor;
+  animation:
+    nfo-typing 3s steps(40, end),
+    nfo-blink 1s step-end infinite;
+}
+
+/* ============================================
+   FADE IN EFFECTS
+   ============================================ */
+
+@keyframes nfo-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.nfo-fade-in {
+  animation: nfo-fade-in 0.5s ease-out;
+}
+
+@keyframes nfo-fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.nfo-fade-in-up {
+  animation: nfo-fade-in-up 0.5s ease-out;
+}
+
+/* ============================================
+   GLITCH EFFECT
+   ============================================ */
+
+@keyframes nfo-glitch {
+  0%, 100% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+}
+
+.nfo-glitch {
+  position: relative;
+}
+
+.nfo-glitch:hover {
+  animation: nfo-glitch 0.3s infinite;
+}
+
+/* ============================================
+   CRT POWER ON
+   ============================================ */
+
+@keyframes nfo-crt-on {
+  0% {
+    transform: scaleY(0.01) scaleX(0);
+    filter: brightness(30);
+  }
+  30% {
+    transform: scaleY(0.01) scaleX(1);
+  }
+  50% {
+    transform: scaleY(1) scaleX(1);
+    filter: brightness(1);
+  }
+  100% {
+    transform: scaleY(1) scaleX(1);
+    filter: brightness(1);
+  }
+}
+
+.nfo-crt-on {
+  animation: nfo-crt-on 2.9s ease-out forwards;
+}
+
+/* ============================================
+   RGB SHIFT
+   ============================================ */
+
+@keyframes nfo-rgb-shift {
+  0%, 100% {
+    text-shadow:
+      -1px 0 var(--nfo-red),
+      1px 0 var(--nfo-cyan);
+  }
+  50% {
+    text-shadow:
+      -2px 0 var(--nfo-red),
+      2px 0 var(--nfo-cyan);
+  }
+}
+
+.nfo-rgb-shift:hover {
+  animation: nfo-rgb-shift 0.2s infinite;
+}
+
+/* ============================================
+   UTILITY - REDUCE MOTION
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .nfo-blink,
+  .nfo-flicker,
+  .nfo-flicker-subtle,
+  .nfo-typing,
+  .nfo-glitch:hover,
+  .nfo-rgb-shift:hover,
+  .nfo-gradient-animated,
+  .nfo-glow-pulse,
+  .nfo-scanline-moving::after {
+    animation: none;
+  }
+}

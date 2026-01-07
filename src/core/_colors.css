@@ -1,0 +1,149 @@
+/**
+ * NFO.css - Color Utilities
+ * Text and background color classes
+ */
+
+/* ============================================
+   16-COLOR ANSI PALETTE
+   Standard terminal colors (0-15)
+   ============================================ */
+
+/* Normal text colors (0-7) */
+.nfo-ansi-black { color: var(--nfo-ansi-black); }
+.nfo-ansi-red { color: var(--nfo-ansi-red); }
+.nfo-ansi-green { color: var(--nfo-ansi-green); }
+.nfo-ansi-yellow { color: var(--nfo-ansi-yellow); }
+.nfo-ansi-blue { color: var(--nfo-ansi-blue); }
+.nfo-ansi-magenta { color: var(--nfo-ansi-magenta); }
+.nfo-ansi-cyan { color: var(--nfo-ansi-cyan); }
+.nfo-ansi-white { color: var(--nfo-ansi-white); }
+
+/* Bright text colors (8-15) */
+.nfo-ansi-bright-black { color: var(--nfo-ansi-bright-black); }
+.nfo-ansi-bright-red { color: var(--nfo-ansi-bright-red); }
+.nfo-ansi-bright-green { color: var(--nfo-ansi-bright-green); }
+.nfo-ansi-bright-yellow { color: var(--nfo-ansi-bright-yellow); }
+.nfo-ansi-bright-blue { color: var(--nfo-ansi-bright-blue); }
+.nfo-ansi-bright-magenta { color: var(--nfo-ansi-bright-magenta); }
+.nfo-ansi-bright-cyan { color: var(--nfo-ansi-bright-cyan); }
+.nfo-ansi-bright-white { color: var(--nfo-ansi-bright-white); }
+
+/* Normal background colors (0-7) */
+.nfo-bg-ansi-black { background-color: var(--nfo-ansi-black); color: var(--nfo-ansi-white); }
+.nfo-bg-ansi-red { background-color: var(--nfo-ansi-red); color: var(--nfo-ansi-white); }
+.nfo-bg-ansi-green { background-color: var(--nfo-ansi-green); color: var(--nfo-ansi-black); }
+.nfo-bg-ansi-yellow { background-color: var(--nfo-ansi-yellow); color: var(--nfo-ansi-black); }
+.nfo-bg-ansi-blue { background-color: var(--nfo-ansi-blue); color: var(--nfo-ansi-white); }
+.nfo-bg-ansi-magenta { background-color: var(--nfo-ansi-magenta); color: var(--nfo-ansi-white); }
+.nfo-bg-ansi-cyan { background-color: var(--nfo-ansi-cyan); color: var(--nfo-ansi-black); }
+.nfo-bg-ansi-white { background-color: var(--nfo-ansi-white); color: var(--nfo-ansi-black); }
+
+/* Bright background colors (8-15) */
+.nfo-bg-ansi-bright-black { background-color: var(--nfo-ansi-bright-black); color: var(--nfo-ansi-white); }
+.nfo-bg-ansi-bright-red { background-color: var(--nfo-ansi-bright-red); color: var(--nfo-ansi-black); }
+.nfo-bg-ansi-bright-green { background-color: var(--nfo-ansi-bright-green); color: var(--nfo-ansi-black); }
+.nfo-bg-ansi-bright-yellow { background-color: var(--nfo-ansi-bright-yellow); color: var(--nfo-ansi-black); }
+.nfo-bg-ansi-bright-blue { background-color: var(--nfo-ansi-bright-blue); color: var(--nfo-ansi-white); }
+.nfo-bg-ansi-bright-magenta { background-color: var(--nfo-ansi-bright-magenta); color: var(--nfo-ansi-white); }
+.nfo-bg-ansi-bright-cyan { background-color: var(--nfo-ansi-bright-cyan); color: var(--nfo-ansi-black); }
+.nfo-bg-ansi-bright-white { background-color: var(--nfo-ansi-bright-white); color: var(--nfo-ansi-black); }
+
+/* ============================================
+   NFO/DEMOSCENE TEXT COLORS
+   ============================================ */
+
+.nfo-cyan { color: var(--nfo-cyan); }
+.nfo-green { color: var(--nfo-green); }
+.nfo-magenta { color: var(--nfo-magenta); }
+.nfo-yellow { color: var(--nfo-yellow); }
+.nfo-orange { color: var(--nfo-orange); }
+.nfo-red { color: var(--nfo-red); }
+.nfo-blue { color: var(--nfo-blue); }
+.nfo-white { color: var(--nfo-white); }
+
+/* Grays */
+.nfo-gray { color: var(--nfo-gray); }
+.nfo-gray-light { color: var(--nfo-gray-light); }
+.nfo-gray-lighter { color: var(--nfo-gray-lighter); }
+.nfo-gray-dark { color: var(--nfo-gray-dark); }
+
+/* Dimmed versions */
+.nfo-cyan-dim { color: var(--nfo-cyan-dim); }
+.nfo-green-dim { color: var(--nfo-green-dim); }
+.nfo-magenta-dim { color: var(--nfo-magenta-dim); }
+
+/* ============================================
+   BACKGROUND COLORS
+   ============================================ */
+
+.nfo-bg-black { background-color: var(--nfo-bg-black); }
+.nfo-bg-dark { background-color: var(--nfo-bg-dark); }
+.nfo-bg-blue { background-color: var(--nfo-bg-blue); }
+.nfo-bg-navy { background-color: var(--nfo-bg-navy); }
+
+/* Colored backgrounds */
+.nfo-bg-cyan { background-color: var(--nfo-cyan); color: var(--nfo-bg-black); }
+.nfo-bg-green { background-color: var(--nfo-green); color: var(--nfo-bg-black); }
+.nfo-bg-magenta { background-color: var(--nfo-magenta); color: var(--nfo-bg-black); }
+.nfo-bg-yellow { background-color: var(--nfo-yellow); color: var(--nfo-bg-black); }
+.nfo-bg-orange { background-color: var(--nfo-orange); color: var(--nfo-bg-black); }
+.nfo-bg-red { background-color: var(--nfo-red); color: var(--nfo-bg-black); }
+.nfo-bg-blue-bright { background-color: var(--nfo-blue); color: var(--nfo-white); }
+.nfo-bg-white { background-color: var(--nfo-white); color: var(--nfo-bg-black); }
+
+/* Gray backgrounds */
+.nfo-bg-gray { background-color: var(--nfo-gray); }
+.nfo-bg-gray-dark { background-color: var(--nfo-gray-dark); }
+
+/* ============================================
+   BORDER COLORS
+   ============================================ */
+
+.nfo-border-cyan { border-color: var(--nfo-cyan); }
+.nfo-border-green { border-color: var(--nfo-green); }
+.nfo-border-magenta { border-color: var(--nfo-magenta); }
+.nfo-border-yellow { border-color: var(--nfo-yellow); }
+.nfo-border-orange { border-color: var(--nfo-orange); }
+.nfo-border-red { border-color: var(--nfo-red); }
+.nfo-border-blue { border-color: var(--nfo-blue); }
+.nfo-border-white { border-color: var(--nfo-white); }
+.nfo-border-gray { border-color: var(--nfo-gray); }
+
+/* ============================================
+   COLOR SCHEMES (combined bg + text)
+   ============================================ */
+
+.nfo-scheme-default {
+  background-color: var(--nfo-bg-black);
+  color: var(--nfo-gray-lighter);
+}
+
+.nfo-scheme-blue {
+  background-color: var(--nfo-bg-blue);
+  color: var(--nfo-cyan);
+}
+
+.nfo-scheme-matrix {
+  background-color: var(--nfo-bg-black);
+  color: var(--nfo-green);
+}
+
+.nfo-scheme-vapor {
+  background-color: var(--nfo-bg-navy);
+  color: var(--nfo-magenta);
+}
+
+.nfo-scheme-amber {
+  background-color: var(--nfo-bg-black);
+  color: var(--nfo-orange);
+}
+
+/* ============================================
+   HOVER STATES
+   ============================================ */
+
+.nfo-hover-cyan:hover { color: var(--nfo-cyan); }
+.nfo-hover-green:hover { color: var(--nfo-green); }
+.nfo-hover-magenta:hover { color: var(--nfo-magenta); }
+.nfo-hover-yellow:hover { color: var(--nfo-yellow); }
+.nfo-hover-white:hover { color: var(--nfo-white); }

@@ -1,0 +1,242 @@
+/**
+ * NFO.css - Navigation Component
+ * ASCII-styled navigation menus
+ */
+
+/* ============================================
+   BASE NAV
+   ============================================ */
+
+.nfo-nav {
+  font-family: var(--nfo-font-family);
+  display: flex;
+  gap: var(--nfo-space-1);
+}
+
+.nfo-nav-item {
+  color: var(--nfo-gray-light);
+  padding: var(--nfo-space-2) var(--nfo-space-3);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: var(--nfo-font-size-sm);
+  letter-spacing: var(--nfo-letter-spacing-wide);
+  transition: color var(--nfo-transition-fast);
+}
+
+.nfo-nav-item:hover {
+  color: var(--nfo-cyan);
+}
+
+.nfo-nav-item.active {
+  color: var(--nfo-cyan);
+}
+
+/* ============================================
+   NAV WITH SEPARATORS
+   ============================================ */
+
+.nfo-nav-separated .nfo-nav-item:not(:last-child)::after {
+  content: "|";
+  margin-left: var(--nfo-space-3);
+  color: var(--nfo-gray);
+}
+
+.nfo-nav-separated-dot .nfo-nav-item:not(:last-child)::after {
+  content: "•";
+  margin-left: var(--nfo-space-3);
+  color: var(--nfo-gray);
+}
+
+.nfo-nav-separated-arrow .nfo-nav-item:not(:last-child)::after {
+  content: ">";
+  margin-left: var(--nfo-space-3);
+  color: var(--nfo-gray);
+}
+
+.nfo-nav-separated-dash .nfo-nav-item:not(:last-child)::after {
+  content: "-";
+  margin-left: var(--nfo-space-3);
+  color: var(--nfo-gray);
+}
+
+/* ============================================
+   BRACKETED NAV [ item ]
+   ============================================ */
+
+.nfo-nav-bracket .nfo-nav-item::before {
+  content: "[";
+  color: var(--nfo-gray);
+}
+
+.nfo-nav-bracket .nfo-nav-item::after {
+  content: "]";
+  color: var(--nfo-gray);
+}
+
+.nfo-nav-bracket .nfo-nav-item:hover::before,
+.nfo-nav-bracket .nfo-nav-item:hover::after,
+.nfo-nav-bracket .nfo-nav-item.active::before,
+.nfo-nav-bracket .nfo-nav-item.active::after {
+  color: var(--nfo-cyan);
+}
+
+/* ============================================
+   VERTICAL NAV
+   ============================================ */
+
+.nfo-nav-vertical {
+  flex-direction: column;
+  gap: 0;
+}
+
+.nfo-nav-vertical .nfo-nav-item {
+  display: block;
+  padding: var(--nfo-space-2) var(--nfo-space-4);
+  border-left: 2px solid transparent;
+}
+
+.nfo-nav-vertical .nfo-nav-item:hover {
+  border-left-color: var(--nfo-cyan);
+  background: rgba(0, 255, 255, 0.05);
+}
+
+.nfo-nav-vertical .nfo-nav-item.active {
+  border-left-color: var(--nfo-cyan);
+  background: rgba(0, 255, 255, 0.1);
+}
+
+/* ============================================
+   NAV WITH POINTER > item
+   ============================================ */
+
+.nfo-nav-pointer .nfo-nav-item::before {
+  content: "  ";
+  transition: content var(--nfo-transition-fast);
+}
+
+.nfo-nav-pointer .nfo-nav-item:hover::before,
+.nfo-nav-pointer .nfo-nav-item.active::before {
+  content: "> ";
+  color: var(--nfo-cyan);
+}
+
+/* ============================================
+   NAV BOXED
+   ============================================ */
+
+.nfo-nav-boxed {
+  background: var(--nfo-bg-dark);
+  border: 1px solid var(--nfo-gray);
+  padding: var(--nfo-space-2);
+}
+
+.nfo-nav-boxed .nfo-nav-item {
+  padding: var(--nfo-space-1) var(--nfo-space-3);
+}
+
+/* ============================================
+   BREADCRUMB NAV
+   ============================================ */
+
+.nfo-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: var(--nfo-space-2);
+  font-family: var(--nfo-font-family);
+  font-size: var(--nfo-font-size-sm);
+  color: var(--nfo-gray);
+}
+
+.nfo-breadcrumb-item {
+  color: var(--nfo-gray-light);
+  text-decoration: none;
+}
+
+.nfo-breadcrumb-item:hover {
+  color: var(--nfo-cyan);
+}
+
+.nfo-breadcrumb-item:last-child {
+  color: var(--nfo-cyan);
+}
+
+.nfo-breadcrumb-separator::before {
+  content: "/";
+  color: var(--nfo-gray);
+}
+
+.nfo-breadcrumb-separator-arrow::before {
+  content: ">";
+  color: var(--nfo-gray);
+}
+
+/* ============================================
+   TABS
+   ============================================ */
+
+.nfo-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--nfo-gray);
+}
+
+.nfo-tab {
+  font-family: var(--nfo-font-family);
+  padding: var(--nfo-space-2) var(--nfo-space-4);
+  color: var(--nfo-gray-light);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: var(--nfo-font-size-sm);
+  letter-spacing: var(--nfo-letter-spacing-wide);
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition:
+    color var(--nfo-transition-fast),
+    border-color var(--nfo-transition-fast);
+}
+
+.nfo-tab:hover {
+  color: var(--nfo-white);
+}
+
+.nfo-tab.active {
+  color: var(--nfo-cyan);
+  border-bottom-color: var(--nfo-cyan);
+}
+
+/* ============================================
+   NAV COLOR VARIANTS
+   ============================================ */
+
+.nfo-nav-green .nfo-nav-item:hover,
+.nfo-nav-green .nfo-nav-item.active {
+  color: var(--nfo-green);
+}
+
+.nfo-nav-green.nfo-nav-bracket .nfo-nav-item:hover::before,
+.nfo-nav-green.nfo-nav-bracket .nfo-nav-item:hover::after {
+  color: var(--nfo-green);
+}
+
+.nfo-nav-magenta .nfo-nav-item:hover,
+.nfo-nav-magenta .nfo-nav-item.active {
+  color: var(--nfo-magenta);
+}
+
+.nfo-nav-yellow .nfo-nav-item:hover,
+.nfo-nav-yellow .nfo-nav-item.active {
+  color: var(--nfo-yellow);
+}
+
+/* ============================================
+   FOOTER NAV (centered, compact)
+   ============================================ */
+
+.nfo-nav-footer {
+  justify-content: center;
+  padding: var(--nfo-space-4) 0;
+}
+
+.nfo-nav-footer .nfo-nav-item {
+  font-size: var(--nfo-font-size-xs);
+  padding: var(--nfo-space-1) var(--nfo-space-2);
+}

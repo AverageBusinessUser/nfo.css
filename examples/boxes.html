@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NFO.css - Boxes</title>
+  <link rel="stylesheet" href="../src/nfo.css">
+  <style>
+    .demo-section { margin-bottom: 4rem; }
+  </style>
+</head>
+<body class="nfo-page nfo-scanlines-heavy nfo-fade-in">
+  <div class="nfo-container nfo-py-8">
+
+    <!-- Header -->
+    <header class="nfo-center nfo-mb-8">
+      <h1 class="nfo-h1 nfo-cyan nfo-glow-cyan">NFO.css</h1>
+      <p class="nfo-gray nfo-text-sm nfo-tracking-wider">ASCII ART STYLE CSS LIBRARY</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nfo-nav nfo-nav-bracket nfo-justify-center nfo-mb-8">
+      <a href="index.html" class="nfo-nav-item">Home</a>
+      <a href="colors.html" class="nfo-nav-item">Colors</a>
+      <a href="typography.html" class="nfo-nav-item">Typography</a>
+      <a href="banners.html" class="nfo-nav-item">Banners</a>
+      <a href="boxes.html" class="nfo-nav-item active">Boxes</a>
+      <a href="buttons.html" class="nfo-nav-item">Buttons</a>
+      <a href="cards.html" class="nfo-nav-item">Cards</a>
+      <a href="tables.html" class="nfo-nav-item">Tables</a>
+      <a href="forms.html" class="nfo-nav-item">Forms</a>
+      <a href="lists.html" class="nfo-nav-item">Lists</a>
+      <a href="effects.html" class="nfo-nav-item">Effects</a>
+      <a href="themes.html" class="nfo-nav-item">Themes</a>
+    </nav>
+
+    <div class="nfo-divider nfo-divider-double nfo-cyan-dim"></div>
+
+    <!-- Boxes Section -->
+    <section class="demo-section">
+      <h2 class="nfo-h2 nfo-cyan nfo-mb-4">&gt; BOXES</h2>
+
+      <div class="nfo-grid nfo-grid-cols-2 nfo-md-grid-cols-3 nfo-gap-4">
+        <div class="nfo-box nfo-box-single nfo-p-4">
+          <p class="nfo-gray-light">Single border box</p>
+        </div>
+
+        <div class="nfo-box nfo-box-double nfo-p-4">
+          <p class="nfo-gray-light">Double border box</p>
+        </div>
+
+        <div class="nfo-box nfo-box-ascii nfo-p-4">
+          <p class="nfo-gray-light">ASCII dashed box</p>
+        </div>
+
+        <div class="nfo-box nfo-box-block-full nfo-p-4">
+          <p class="nfo-gray-light">Block border box</p>
+        </div>
+
+        <div class="nfo-box nfo-box-single nfo-box-cyan nfo-p-4">
+          <p>Cyan colored box</p>
+        </div>
+
+        <div class="nfo-box nfo-box-single nfo-box-green nfo-p-4">
+          <p>Green colored box</p>
+        </div>
+
+        <div class="nfo-box nfo-box-single nfo-box-magenta nfo-p-4">
+          <p>Magenta colored box</p>
+        </div>
+
+        <div class="nfo-box nfo-box-block-full nfo-box-cyan nfo-p-4">
+          <p>Cyan block box</p>
+        </div>
+
+        <div class="nfo-box nfo-box-single nfo-box-glow-cyan nfo-border-cyan nfo-p-4">
+          <p class="nfo-cyan">Glowing cyan box</p>
+        </div>
+      </div>
+
+      <h3 class="nfo-h4 nfo-mt-6 nfo-mb-4">Character Border Boxes</h3>
+      <div class="nfo-grid nfo-grid-cols-1 nfo-md-grid-cols-2 nfo-gap-4">
+        <!-- ASCII box with +--+ corners -->
+        <div class="nfo-box-ascii-full">
+          <div class="nfo-box-ascii-top">
+            <span class="nfo-box-ascii-line"></span>
+          </div>
+          <div class="nfo-box-ascii-content">
+            <p class="nfo-gray-light">ASCII box with + corners and | sides</p>
+          </div>
+          <div class="nfo-box-ascii-bottom">
+            <span class="nfo-box-ascii-line"></span>
+          </div>
+        </div>
+
+        <!-- Unicode box with ┌─┐ corners -->
+        <div class="nfo-box-unicode-full">
+          <div class="nfo-box-unicode-top">
+            <span class="nfo-box-unicode-line"></span>
+          </div>
+          <div class="nfo-box-unicode-content">
+            <p class="nfo-gray-light">Unicode box with ┌┐└┘ corners</p>
+          </div>
+          <div class="nfo-box-unicode-bottom">
+            <span class="nfo-box-unicode-line"></span>
+          </div>
+        </div>
+
+        <!-- Block character box -->
+        <div class="nfo-box-blocks">
+          <span class="nfo-box-blocks-top"></span>
+          <div class="nfo-box-blocks-content">
+            <p class="nfo-gray-light">Block character box (solid borders)</p>
+          </div>
+          <span class="nfo-box-blocks-bottom"></span>
+        </div>
+
+        <!-- Colored Unicode box -->
+        <div class="nfo-box-unicode-full nfo-cyan">
+          <div class="nfo-box-unicode-top">
+            <span class="nfo-box-unicode-line"></span>
+          </div>
+          <div class="nfo-box-unicode-content">
+            <p>Cyan Unicode box</p>
+          </div>
+          <div class="nfo-box-unicode-bottom">
+            <span class="nfo-box-unicode-line"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="nfo-mt-4">
+        <div class="nfo-box-header nfo-box-single nfo-box-cyan">
+          <div class="nfo-box-header-title nfo-cyan">:: File Information ::</div>
+          <div class="nfo-box-header-content">
+            <p class="nfo-gray-light">This box has a header section, commonly used in NFO files to display release info.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="nfo-mt-8 nfo-pt-4">
+      <div class="nfo-divider nfo-divider-double nfo-cyan-dim"></div>
+      <div class="nfo-center nfo-py-4">
+        <nav class="nfo-nav nfo-nav-footer nfo-nav-separated">
+          <a href="index.html" class="nfo-nav-item">Home</a>
+          <a href="#" class="nfo-nav-item">GitHub</a>
+          <a href="#" class="nfo-nav-item">License</a>
+        </nav>
+      </div>
+    </footer>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,232 @@
+/**
+ * NFO.css - Card Component
+ * Content cards with NFO styling
+ */
+
+/* ============================================
+   BASE CARD
+   ============================================ */
+
+.nfo-card {
+  background: var(--nfo-bg-dark);
+  border: 1px solid var(--nfo-gray);
+  font-family: var(--nfo-font-family);
+  overflow: hidden;
+}
+
+/* ============================================
+   CARD SECTIONS
+   ============================================ */
+
+.nfo-card-header {
+  padding: var(--nfo-space-3) var(--nfo-space-4);
+  background: var(--nfo-gray-dark);
+  border-bottom: 1px solid var(--nfo-gray);
+}
+
+.nfo-card-title {
+  font-size: var(--nfo-font-size-sm);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: var(--nfo-letter-spacing-wide);
+  margin: 0;
+}
+
+.nfo-card-body {
+  padding: var(--nfo-space-4);
+}
+
+.nfo-card-footer {
+  padding: var(--nfo-space-3) var(--nfo-space-4);
+  background: var(--nfo-gray-dark);
+  border-top: 1px solid var(--nfo-gray);
+}
+
+/* ============================================
+   CARD WITH ASCII HEADER
+   ============================================ */
+
+.nfo-card-ascii-header {
+  background: var(--nfo-bg-dark);
+  border: 1px solid var(--nfo-gray);
+  overflow: hidden;
+}
+
+.nfo-card-ascii-header .nfo-card-header {
+  background: transparent;
+  border-bottom: none;
+  padding: var(--nfo-space-2) var(--nfo-space-4);
+}
+
+.nfo-card-ascii-header .nfo-card-header::before {
+  content: "┌──────────────────────────────────────────────────────────────┐";
+  display: block;
+  color: var(--nfo-gray);
+  margin-bottom: var(--nfo-space-1);
+  white-space: pre;
+  overflow: hidden;
+}
+
+.nfo-card-ascii-header .nfo-card-header::after {
+  content: "├──────────────────────────────────────────────────────────────┤";
+  display: block;
+  color: var(--nfo-gray);
+  margin-top: var(--nfo-space-1);
+  white-space: pre;
+  overflow: hidden;
+}
+
+.nfo-card-ascii-header .nfo-card-body::before {
+  content: "│";
+  float: left;
+  color: var(--nfo-gray);
+  margin-right: var(--nfo-space-2);
+}
+
+.nfo-card-ascii-header .nfo-card-footer::before {
+  content: "└──────────────────────────────────────────────────────────────┘";
+  display: block;
+  color: var(--nfo-gray);
+  margin-bottom: var(--nfo-space-1);
+  white-space: pre;
+  overflow: hidden;
+}
+
+/* ============================================
+   CARD COLOR VARIANTS
+   ============================================ */
+
+.nfo-card-cyan {
+  border-color: var(--nfo-cyan);
+}
+
+.nfo-card-cyan .nfo-card-header {
+  border-color: var(--nfo-cyan);
+  color: var(--nfo-cyan);
+}
+
+.nfo-card-green {
+  border-color: var(--nfo-green);
+}
+
+.nfo-card-green .nfo-card-header {
+  border-color: var(--nfo-green);
+  color: var(--nfo-green);
+}
+
+.nfo-card-magenta {
+  border-color: var(--nfo-magenta);
+}
+
+.nfo-card-magenta .nfo-card-header {
+  border-color: var(--nfo-magenta);
+  color: var(--nfo-magenta);
+}
+
+.nfo-card-yellow {
+  border-color: var(--nfo-yellow);
+}
+
+.nfo-card-yellow .nfo-card-header {
+  border-color: var(--nfo-yellow);
+  color: var(--nfo-yellow);
+}
+
+/* ============================================
+   CARD WITH GLOW
+   ============================================ */
+
+.nfo-card-glow {
+  box-shadow:
+    0 0 5px var(--nfo-gray),
+    0 0 10px var(--nfo-gray-dark);
+}
+
+.nfo-card-glow-cyan {
+  border-color: var(--nfo-cyan);
+  box-shadow:
+    0 0 5px var(--nfo-cyan),
+    0 0 10px var(--nfo-cyan-dim);
+}
+
+.nfo-card-glow-green {
+  border-color: var(--nfo-green);
+  box-shadow:
+    0 0 5px var(--nfo-green),
+    0 0 10px var(--nfo-green-dim);
+}
+
+.nfo-card-glow-magenta {
+  border-color: var(--nfo-magenta);
+  box-shadow:
+    0 0 5px var(--nfo-magenta),
+    0 0 10px var(--nfo-magenta-dim);
+}
+
+/* ============================================
+   HORIZONTAL CARD
+   ============================================ */
+
+.nfo-card-horizontal {
+  display: flex;
+  flex-direction: row;
+}
+
+.nfo-card-horizontal .nfo-card-header {
+  border-bottom: none;
+  border-right: 1px solid var(--nfo-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 150px;
+}
+
+/* ============================================
+   CARD GRID
+   ============================================ */
+
+.nfo-card-grid {
+  display: grid;
+  gap: var(--nfo-space-4);
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+/* ============================================
+   COMPACT CARD
+   ============================================ */
+
+.nfo-card-compact .nfo-card-header,
+.nfo-card-compact .nfo-card-body,
+.nfo-card-compact .nfo-card-footer {
+  padding: var(--nfo-space-2) var(--nfo-space-3);
+}
+
+/* ============================================
+   CARD META INFO (typical NFO info)
+   ============================================ */
+
+.nfo-card-meta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--nfo-space-1);
+  font-size: var(--nfo-font-size-sm);
+  color: var(--nfo-gray-light);
+}
+
+.nfo-card-meta-row {
+  display: flex;
+  gap: var(--nfo-space-2);
+}
+
+.nfo-card-meta-label {
+  color: var(--nfo-gray);
+  min-width: 100px;
+}
+
+.nfo-card-meta-label::after {
+  content: ":";
+}
+
+.nfo-card-meta-value {
+  color: var(--nfo-cyan);
+}

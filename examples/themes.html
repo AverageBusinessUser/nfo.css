@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NFO.css - Themes</title>
+  <link rel="stylesheet" href="../src/nfo.css">
+  <style>
+    .demo-section { margin-bottom: 4rem; }
+    .theme-preview {
+      padding: var(--nfo-space-4);
+      margin-bottom: var(--nfo-space-4);
+      transition: all 0.3s ease;
+    }
+  </style>
+</head>
+<body class="nfo-page nfo-scanlines-heavy nfo-fade-in" id="themed-page">
+  <div class="nfo-container nfo-py-8">
+
+    <!-- Header -->
+    <header class="nfo-center nfo-mb-8">
+      <h1 class="nfo-h1 nfo-glow-themed">NFO.css</h1>
+      <p class="nfo-text-sm nfo-tracking-wider" style="color: var(--nfo-theme-text-muted);">ASCII ART STYLE CSS LIBRARY</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nfo-nav nfo-nav-bracket nfo-justify-center nfo-mb-8">
+      <a href="index.html" class="nfo-nav-item">Home</a>
+      <a href="colors.html" class="nfo-nav-item">Colors</a>
+      <a href="typography.html" class="nfo-nav-item">Typography</a>
+      <a href="banners.html" class="nfo-nav-item">Banners</a>
+      <a href="boxes.html" class="nfo-nav-item">Boxes</a>
+      <a href="buttons.html" class="nfo-nav-item">Buttons</a>
+      <a href="cards.html" class="nfo-nav-item">Cards</a>
+      <a href="tables.html" class="nfo-nav-item">Tables</a>
+      <a href="forms.html" class="nfo-nav-item">Forms</a>
+      <a href="lists.html" class="nfo-nav-item">Lists</a>
+      <a href="effects.html" class="nfo-nav-item">Effects</a>
+      <a href="themes.html" class="nfo-nav-item active">Themes</a>
+    </nav>
+
+    <div class="nfo-divider nfo-divider-double nfo-themed"></div>
+
+    <!-- Theme Selector -->
+    <section class="demo-section">
+      <h2 class="nfo-h2 nfo-mb-4">&gt; SELECT THEME</h2>
+
+      <div class="nfo-box nfo-box-single nfo-p-4 nfo-mb-6">
+        <p class="nfo-mb-4" style="color: var(--nfo-theme-text-muted);">Click a theme button to apply it to this page:</p>
+        <div class="nfo-flex nfo-flex-wrap nfo-gap-2">
+          <button class="nfo-btn nfo-btn-cyan" onclick="setTheme('nfo-theme-default')">Default (Cyan)</button>
+          <button class="nfo-btn nfo-btn-green" onclick="setTheme('nfo-theme-matrix')">Matrix (Green)</button>
+          <button class="nfo-btn nfo-btn-magenta" onclick="setTheme('nfo-theme-vapor')">Vapor (Magenta)</button>
+          <button class="nfo-btn nfo-btn-orange" onclick="setTheme('nfo-theme-amber')">Amber (Orange)</button>
+          <button class="nfo-btn" style="color: var(--nfo-ansi-bright-cyan); border-color: var(--nfo-ansi-bright-cyan);" onclick="setTheme('nfo-theme-ice')">Ice (Blue)</button>
+          <button class="nfo-btn nfo-btn-red" onclick="setTheme('nfo-theme-blood')">Blood (Red)</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Theme Preview -->
+    <section class="demo-section">
+      <h2 class="nfo-h2 nfo-mb-4">&gt; THEME PREVIEW</h2>
+
+      <div class="nfo-grid nfo-grid-cols-1 nfo-md-grid-cols-2 nfo-gap-4 nfo-mb-6">
+        <!-- Typography -->
+        <div class="nfo-box nfo-box-single nfo-p-4">
+          <h3 class="nfo-h3 nfo-mb-2">Typography</h3>
+          <h4 class="nfo-h4 nfo-mb-2">Subheading</h4>
+          <p style="color: var(--nfo-theme-text);" class="nfo-mb-2">Regular text uses theme colors automatically when you apply a theme class to the page.</p>
+          <p style="color: var(--nfo-theme-text-muted);" class="nfo-mb-2">Muted text is slightly dimmer.</p>
+          <p style="color: var(--nfo-theme-text-dim);">Dim text for less important content.</p>
+        </div>
+
+        <!-- Buttons -->
+        <div class="nfo-box nfo-box-single nfo-p-4">
+          <h3 class="nfo-h3 nfo-mb-4">Buttons</h3>
+          <div class="nfo-flex nfo-flex-wrap nfo-gap-2">
+            <button class="nfo-btn nfo-themed">Themed</button>
+            <button class="nfo-btn nfo-btn-bracket nfo-themed">Bracket</button>
+            <button class="nfo-btn nfo-btn-arrow nfo-themed">Arrow</button>
+          </div>
+        </div>
+
+        <!-- Cards -->
+        <div class="nfo-card nfo-themed">
+          <div class="nfo-card-header">
+            <h3 class="nfo-card-title">Themed Card</h3>
+          </div>
+          <div class="nfo-card-body">
+            <p style="color: var(--nfo-theme-text-muted);">Cards automatically adapt to the selected theme, including borders and header colors.</p>
+          </div>
+        </div>
+
+        <!-- Glow Effects -->
+        <div class="nfo-box nfo-box-single nfo-p-4">
+          <h3 class="nfo-h3 nfo-mb-4">Glow Effects</h3>
+          <p class="nfo-text-xl nfo-glow-themed nfo-mb-2" style="color: var(--nfo-theme-primary);">Themed Glow</p>
+          <p class="nfo-text-xl nfo-glow-themed-strong" style="color: var(--nfo-theme-primary);">Strong Themed Glow</p>
+        </div>
+      </div>
+
+      <!-- Lists -->
+      <div class="nfo-box nfo-box-single nfo-p-4 nfo-mb-6">
+        <h3 class="nfo-h3 nfo-mb-4">Lists</h3>
+        <div class="nfo-grid nfo-grid-cols-1 nfo-md-grid-cols-3 nfo-gap-4">
+          <ul class="nfo-list nfo-list-arrow nfo-themed">
+            <li>Arrow list item</li>
+            <li>Second item</li>
+            <li>Third item</li>
+          </ul>
+          <ul class="nfo-list nfo-list-bullet nfo-themed">
+            <li>Bullet list item</li>
+            <li>Second item</li>
+            <li>Third item</li>
+          </ul>
+          <ul class="nfo-list nfo-list-dash nfo-themed">
+            <li>Dash list item</li>
+            <li>Second item</li>
+            <li>Third item</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Form Elements -->
+      <div class="nfo-box nfo-box-single nfo-p-4 nfo-mb-6">
+        <h3 class="nfo-h3 nfo-mb-4">Form Elements</h3>
+        <div class="nfo-grid nfo-grid-cols-1 nfo-md-grid-cols-2 nfo-gap-4">
+          <div class="nfo-form-group">
+            <label class="nfo-label">Text Input</label>
+            <input type="text" class="nfo-input nfo-themed nfo-w-full" placeholder="Type here...">
+          </div>
+          <div class="nfo-form-group">
+            <label class="nfo-label">Select</label>
+            <select class="nfo-select nfo-w-full">
+              <option>Option 1</option>
+              <option>Option 2</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Usage -->
+    <section class="demo-section">
+      <h2 class="nfo-h2 nfo-mb-4">&gt; USAGE</h2>
+
+      <div class="nfo-box nfo-box-single nfo-p-4 nfo-mb-6">
+        <h3 class="nfo-h4 nfo-mb-4">Apply a Theme to the Entire Page</h3>
+        <p style="color: var(--nfo-theme-text-muted);" class="nfo-mb-4">Add a theme class to your body element:</p>
+        <pre class="nfo-code nfo-p-4 nfo-mb-4">&lt;body class="nfo-page nfo-theme-matrix"&gt;</pre>
+
+        <h3 class="nfo-h4 nfo-mb-4">Available Themes</h3>
+        <table class="nfo-table nfo-table-striped nfo-w-full nfo-mb-4">
+          <thead>
+            <tr>
+              <th>Theme Class</th>
+              <th>Colors</th>
+              <th>Box Style</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code class="nfo-code">nfo-theme-default</code></td>
+              <td>Cyan/Magenta</td>
+              <td>Single border (nfo-box-single)</td>
+            </tr>
+            <tr>
+              <td><code class="nfo-code">nfo-theme-matrix</code></td>
+              <td>Green terminal</td>
+              <td>Double border (nfo-box-double)</td>
+            </tr>
+            <tr>
+              <td><code class="nfo-code">nfo-theme-vapor</code></td>
+              <td>Magenta/Cyan</td>
+              <td>Dashed border (nfo-box-ascii)</td>
+            </tr>
+            <tr>
+              <td><code class="nfo-code">nfo-theme-amber</code></td>
+              <td>Orange/Yellow</td>
+              <td>Single border (nfo-box-single)</td>
+            </tr>
+            <tr>
+              <td><code class="nfo-code">nfo-theme-ice</code></td>
+              <td>Blue/Cyan</td>
+              <td>Single border (nfo-box-single)</td>
+            </tr>
+            <tr>
+              <td><code class="nfo-code">nfo-theme-blood</code></td>
+              <td>Red</td>
+              <td>Block border (nfo-box-block-full)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3 class="nfo-h4 nfo-mb-4">Theme Individual Components</h3>
+        <p style="color: var(--nfo-theme-text-muted);" class="nfo-mb-4">Use <code class="nfo-code">nfo-themed</code> class on individual elements:</p>
+        <pre class="nfo-code nfo-p-4 nfo-mb-4">&lt;button class="nfo-btn nfo-themed"&gt;Themed Button&lt;/button&gt;
+&lt;div class="nfo-box nfo-box-single nfo-themed"&gt;...&lt;/div&gt;
+&lt;div class="nfo-card nfo-themed"&gt;...&lt;/div&gt;</pre>
+
+        <h3 class="nfo-h4 nfo-mb-4">Use Theme CSS Variables</h3>
+        <p style="color: var(--nfo-theme-text-muted);" class="nfo-mb-4">Reference theme variables in your custom CSS:</p>
+        <pre class="nfo-code nfo-p-4 nfo-mb-4">.my-element {
+  color: var(--nfo-theme-primary);
+  background: var(--nfo-theme-bg-alt);
+  border-color: var(--nfo-theme-border);
+}</pre>
+
+        <h3 class="nfo-h4 nfo-mb-4">Customize Theme Box Styles</h3>
+        <p style="color: var(--nfo-theme-text-muted);" class="nfo-mb-4">Each theme defines its own box style. To customize, add CSS rules for your theme:</p>
+        <pre class="nfo-code nfo-p-4">/* Example: Use double border for a custom theme */
+.nfo-page.nfo-theme-custom .nfo-box,
+.nfo-page.nfo-theme-custom .nfo-card {
+  border: 3px double var(--nfo-theme-border);
+}
+
+/* Example: Use block style (from nfo-box-block-full) */
+.nfo-page.nfo-theme-custom .nfo-box,
+.nfo-page.nfo-theme-custom .nfo-card {
+  border: none;
+  box-shadow:
+    inset 4px 0 0 0 var(--nfo-theme-border),
+    inset -4px 0 0 0 var(--nfo-theme-border),
+    inset 0 4px 0 0 var(--nfo-theme-border),
+    inset 0 -4px 0 0 var(--nfo-theme-border);
+}</pre>
+      </div>
+
+      <div class="nfo-box nfo-box-single nfo-p-4">
+        <h3 class="nfo-h4 nfo-mb-4">Available Theme Variables</h3>
+        <table class="nfo-table nfo-table-striped nfo-w-full">
+          <thead>
+            <tr>
+              <th>Variable</th>
+              <th>Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code class="nfo-code">--nfo-theme-primary</code></td>
+              <td>Main accent color (headings, links, focus)</td>
+            </tr>
+            <tr>
+              <td><code class="nfo-code">--nfo-theme-primary-dim</code></td>
+              <td>Dimmed version of primary</td>
+            </tr>
+            <tr>
+              <td><code class="nfo-code">--nfo-theme-secondary</code></td>
+              <td>Secondary accent color</td>
+            </tr>
+            <tr>
+              <td><code class="nfo-code">--nfo-theme-text</code></td>
+              <td>Main text color</td>
+            </tr>
+            <tr>
+              <td><code class="nfo-code">--nfo-theme-text-muted</code></td>
+              <td>Muted text color</td>
+            </tr>
+            <tr>
+              <td><code class="nfo-code">--nfo-theme-text-dim</code></td>
+              <td>Dim text color</td>
+            </tr>
+            <tr>
+              <td><code class="nfo-code">--nfo-theme-bg</code></td>
+              <td>Page background</td>
+            </tr>
+            <tr>
+              <td><code class="nfo-code">--nfo-theme-bg-alt</code></td>
+              <td>Alternate/card background</td>
+            </tr>
+            <tr>
+              <td><code class="nfo-code">--nfo-theme-border</code></td>
+              <td>Border color</td>
+            </tr>
+            <tr>
+              <td><code class="nfo-code">--nfo-theme-glow</code></td>
+              <td>Glow effect color</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="nfo-mt-8 nfo-pt-4">
+      <div class="nfo-divider nfo-divider-double nfo-themed"></div>
+      <div class="nfo-center nfo-py-4">
+        <nav class="nfo-nav nfo-nav-footer nfo-nav-separated">
+          <a href="index.html" class="nfo-nav-item">Home</a>
+          <a href="#" class="nfo-nav-item">GitHub</a>
+          <a href="#" class="nfo-nav-item">License</a>
+        </nav>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    function setTheme(theme) {
+      const page = document.getElementById('themed-page');
+      // Remove all theme classes
+      page.classList.remove('nfo-theme-default', 'nfo-theme-matrix', 'nfo-theme-vapor', 'nfo-theme-amber', 'nfo-theme-ice', 'nfo-theme-blood');
+      // Add new theme if specified
+      if (theme) {
+        page.classList.add(theme);
+      }
+    }
+  </script>
+</body>
+</html>

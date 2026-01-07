@@ -1,0 +1,203 @@
+/**
+ * NFO.css - Banner Component
+ * Large ASCII art headers and logo displays
+ */
+
+/* ============================================
+   BASE BANNER
+   ============================================ */
+
+.nfo-banner {
+  font-family: var(--nfo-font-family);
+  white-space: pre;
+  line-height: var(--nfo-line-height-tight);
+  letter-spacing: 0;
+  overflow-x: auto;
+  padding: var(--nfo-space-4);
+  text-align: center;
+
+  /* Disable ligatures for proper ASCII alignment */
+  font-variant-ligatures: none;
+  font-feature-settings: "liga" 0, "calt" 0;
+}
+
+/* ============================================
+   BANNER SIZES
+   ============================================ */
+
+.nfo-banner-sm {
+  font-size: var(--nfo-font-size-xs);
+}
+
+.nfo-banner-md {
+  font-size: var(--nfo-font-size-sm);
+}
+
+.nfo-banner-lg {
+  font-size: var(--nfo-font-size-base);
+}
+
+.nfo-banner-xl {
+  font-size: var(--nfo-font-size-lg);
+}
+
+/* ============================================
+   BANNER WITH BORDER
+   ============================================ */
+
+.nfo-banner-framed {
+  border: 1px solid var(--nfo-gray);
+  background: var(--nfo-bg-black);
+  margin: var(--nfo-space-4) 0;
+}
+
+.nfo-banner-double-framed {
+  border: 3px double var(--nfo-gray);
+  background: var(--nfo-bg-black);
+  margin: var(--nfo-space-4) 0;
+}
+
+/* ============================================
+   BANNER COLOR VARIANTS
+   ============================================ */
+
+.nfo-banner-cyan {
+  color: var(--nfo-cyan);
+}
+
+.nfo-banner-green {
+  color: var(--nfo-green);
+}
+
+.nfo-banner-magenta {
+  color: var(--nfo-magenta);
+}
+
+.nfo-banner-yellow {
+  color: var(--nfo-yellow);
+}
+
+.nfo-banner-orange {
+  color: var(--nfo-orange);
+}
+
+.nfo-banner-gradient {
+  background: linear-gradient(180deg, var(--nfo-cyan) 0%, var(--nfo-magenta) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ============================================
+   BANNER WITH GLOW
+   ============================================ */
+
+.nfo-banner-glow {
+  text-shadow:
+    0 0 10px currentColor,
+    0 0 20px currentColor,
+    0 0 30px currentColor;
+}
+
+.nfo-banner-glow-intense {
+  text-shadow:
+    0 0 10px currentColor,
+    0 0 20px currentColor,
+    0 0 40px currentColor,
+    0 0 80px currentColor;
+}
+
+/* ============================================
+   BANNER DIVIDERS (separators)
+   ============================================ */
+
+.nfo-divider {
+  font-family: var(--nfo-font-family);
+  text-align: center;
+  color: var(--nfo-gray);
+  margin: var(--nfo-space-4) 0;
+  white-space: pre;
+  line-height: 1;
+  overflow: hidden;
+}
+
+.nfo-divider-single::before {
+  content: "────────────────────────────────────────────────────────────────────────────────";
+  display: block;
+}
+
+.nfo-divider-double::before {
+  content: "════════════════════════════════════════════════════════════════════════════════";
+  display: block;
+}
+
+.nfo-divider-ascii::before {
+  content: "--------------------------------------------------------------------------------";
+  display: block;
+}
+
+.nfo-divider-dots::before {
+  content: "················································································";
+  display: block;
+}
+
+.nfo-divider-stars::before {
+  content: "********************************************************************************";
+  display: block;
+}
+
+.nfo-divider-blocks::before {
+  content: "████████████████████████████████████████████████████████████████████████████████";
+  display: block;
+}
+
+/* ============================================
+   BANNER WITH TITLE DIVIDER
+   ============================================ */
+
+.nfo-title-divider {
+  display: flex;
+  align-items: center;
+  gap: var(--nfo-space-4);
+  color: var(--nfo-gray);
+  margin: var(--nfo-space-4) 0;
+}
+
+.nfo-title-divider::before,
+.nfo-title-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--nfo-gray);
+}
+
+.nfo-title-divider-text {
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: var(--nfo-letter-spacing-wider);
+  font-size: var(--nfo-font-size-sm);
+}
+
+/* ============================================
+   ASCII ART CONTAINER (preserves formatting)
+   ============================================ */
+
+.nfo-art {
+  font-family: var(--nfo-font-family);
+  white-space: pre;
+  line-height: 1;
+  letter-spacing: 0;
+  font-variant-ligatures: none;
+  font-feature-settings: "liga" 0, "calt" 0;
+  overflow-x: auto;
+}
+
+/* Center the art */
+.nfo-art-center {
+  display: flex;
+  justify-content: center;
+}
+
+.nfo-art-center pre {
+  text-align: left;
+}

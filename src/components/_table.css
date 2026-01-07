@@ -1,0 +1,248 @@
+/**
+ * NFO.css - Table Component
+ * ASCII-bordered tables for data display
+ */
+
+/* ============================================
+   BASE TABLE
+   ============================================ */
+
+.nfo-table {
+  width: 100%;
+  font-family: var(--nfo-font-family);
+  font-size: var(--nfo-font-size-sm);
+  border-collapse: collapse;
+  background: var(--nfo-bg-dark);
+}
+
+.nfo-table th,
+.nfo-table td {
+  padding: var(--nfo-space-2) var(--nfo-space-3);
+  text-align: left;
+  border: 1px solid var(--nfo-gray);
+}
+
+.nfo-table th {
+  background: var(--nfo-gray-dark);
+  text-transform: uppercase;
+  letter-spacing: var(--nfo-letter-spacing-wide);
+  font-weight: 700;
+  color: var(--nfo-white);
+}
+
+.nfo-table td {
+  color: var(--nfo-gray-light);
+}
+
+/* ============================================
+   STRIPED TABLE
+   ============================================ */
+
+.nfo-table-striped tbody tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+/* ============================================
+   HOVER TABLE
+   ============================================ */
+
+.nfo-table-hover tbody tr:hover {
+  background: rgba(0, 255, 255, 0.05);
+}
+
+/* ============================================
+   BORDERLESS TABLE
+   ============================================ */
+
+.nfo-table-borderless th,
+.nfo-table-borderless td {
+  border: none;
+  border-bottom: 1px solid var(--nfo-gray-dark);
+}
+
+.nfo-table-borderless th {
+  border-bottom: 2px solid var(--nfo-gray);
+}
+
+/* ============================================
+   ASCII BORDERED TABLE
+   Uses: ┌ ┐ └ ┘ │ ─ ├ ┤ ┬ ┴ ┼
+   ============================================ */
+
+.nfo-table-ascii {
+  border: none;
+}
+
+.nfo-table-ascii th,
+.nfo-table-ascii td {
+  border: none;
+  position: relative;
+}
+
+/* Wrapper for ASCII table */
+.nfo-table-ascii-wrap {
+  font-family: var(--nfo-font-family);
+  white-space: pre;
+  line-height: var(--nfo-line-height-tight);
+  color: var(--nfo-gray);
+  overflow-x: auto;
+}
+
+/* ============================================
+   COMPACT TABLE
+   ============================================ */
+
+.nfo-table-compact th,
+.nfo-table-compact td {
+  padding: var(--nfo-space-1) var(--nfo-space-2);
+  font-size: var(--nfo-font-size-xs);
+}
+
+/* ============================================
+   COLOR VARIANTS
+   ============================================ */
+
+.nfo-table-cyan th {
+  background: var(--nfo-cyan-dim);
+  color: var(--nfo-cyan);
+}
+
+.nfo-table-cyan th,
+.nfo-table-cyan td {
+  border-color: var(--nfo-cyan-dim);
+}
+
+.nfo-table-green th {
+  background: var(--nfo-green-dim);
+  color: var(--nfo-green);
+}
+
+.nfo-table-green th,
+.nfo-table-green td {
+  border-color: var(--nfo-green-dim);
+}
+
+.nfo-table-magenta th {
+  background: var(--nfo-magenta-dim);
+  color: var(--nfo-magenta);
+}
+
+.nfo-table-magenta th,
+.nfo-table-magenta td {
+  border-color: var(--nfo-magenta-dim);
+}
+
+/* ============================================
+   TABLE CAPTION
+   ============================================ */
+
+.nfo-table caption {
+  padding: var(--nfo-space-2) var(--nfo-space-3);
+  text-align: left;
+  color: var(--nfo-gray);
+  font-size: var(--nfo-font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--nfo-letter-spacing-wide);
+}
+
+/* ============================================
+   SORTABLE TABLE (visual indicators)
+   ============================================ */
+
+.nfo-table-sortable th {
+  cursor: pointer;
+  user-select: none;
+}
+
+.nfo-table-sortable th:hover {
+  background: var(--nfo-gray);
+}
+
+.nfo-table-sortable th::after {
+  content: " ↕";
+  color: var(--nfo-gray);
+  font-size: var(--nfo-font-size-xs);
+}
+
+.nfo-table-sortable th.sort-asc::after {
+  content: " ▲";
+  color: var(--nfo-cyan);
+}
+
+.nfo-table-sortable th.sort-desc::after {
+  content: " ▼";
+  color: var(--nfo-cyan);
+}
+
+/* ============================================
+   KEY-VALUE TABLE (two columns)
+   ============================================ */
+
+.nfo-table-kv {
+  width: auto;
+}
+
+.nfo-table-kv th {
+  text-align: right;
+  background: transparent;
+  color: var(--nfo-gray);
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.nfo-table-kv th::after {
+  content: ":";
+}
+
+.nfo-table-kv td {
+  color: var(--nfo-cyan);
+}
+
+/* ============================================
+   NFO INFO TABLE (classic style)
+   ============================================ */
+
+.nfo-info-table {
+  width: 100%;
+  font-family: var(--nfo-font-family);
+  font-size: var(--nfo-font-size-sm);
+}
+
+.nfo-info-table tr {
+  display: flex;
+}
+
+.nfo-info-table th,
+.nfo-info-table td {
+  padding: var(--nfo-space-1) 0;
+  border: none;
+  background: transparent;
+}
+
+.nfo-info-table th {
+  color: var(--nfo-gray);
+  min-width: 120px;
+  text-align: left;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.nfo-info-table th::after {
+  content: " ..:";
+}
+
+.nfo-info-table td {
+  color: var(--nfo-cyan);
+  flex: 1;
+}
+
+/* ============================================
+   RESPONSIVE TABLE WRAPPER
+   ============================================ */
+
+.nfo-table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
